@@ -1,0 +1,68 @@
+.slider-item {
+    background-color: #fff;
+}
+
+h2 {
+    color: #000;
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 1;
+    background-color: #fff !important;
+    border-radius: 50%;
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 1px 0px 25px -6px #000000;
+    &::before {
+        content: "";
+        height: 1px;
+        width: 8px;
+        background-color: #000;
+        position: absolute;
+        top: 7px;
+    }
+    &::after {
+        content: "";
+        height: 1px;
+        width: 8px;
+        background-color: #000;
+        position: absolute;
+        top: 12px;
+    }
+}
+
+.slick-prev {
+    left: 16px;
+    top: 52px;
+    &::before {
+        transform: rotate(-45deg);
+        left: 5px;
+    }
+    &::after {
+        transform: rotate(45deg);
+        left: 5px;
+    }
+}
+
+.slick-next {
+    left: 428px;
+    bottom: 43px;
+    &::before {
+        transform: rotate(45deg);
+        left: 6px;
+    }
+    &::after {
+        transform: rotate(-45deg);
+        left: 6px;
+    }
+}
+
+.slick-list {
+    max-width: 500px;
+}
+
+.slick-track {
+    left: 10px;
+}

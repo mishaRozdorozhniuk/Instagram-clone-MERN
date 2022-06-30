@@ -1,0 +1,28 @@
+.rec__user {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.rec__subscribe {
+    border: none;
+    background-color: transparent;
+    color: rgb(0, 149, 246);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.rec__subscribe-add {
+    color: rgb(116, 116, 116);
+    font-size: 12px;
+    letter-spacing: -0.1px;
+}
+
+.rec__user-info {
+    line-height: 0.6;
+    flex: 1;
+}
+
+.rec__user-info span a {
+    padding: 0;
+}

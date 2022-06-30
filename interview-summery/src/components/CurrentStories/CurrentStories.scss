@@ -1,0 +1,45 @@
+@import '../../mixins.scss';
+.current-stories-wrapper {
+    @include flexCentering;
+    flex-direction: column;
+    margin-left: 55px;
+    margin-bottom: 50px;
+}
+
+.current-stories-inner {
+    @include roundedPhotoWrapper;
+    width: 80px;
+    height: 80px;
+}
+
+.current-stories {
+    @include roundedPhoto;
+    width: 91%;
+    height: 91%;
+}
+
+.current-stories-text {
+    font-weight: bold;
+}
+
+.current-stories {
+    border: double 3px transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(rgb(227, 27, 201), rgb(239, 174, 10)), /*here must be*/
+    linear-gradient(to right, rgb(255, 162, 49), rgb(189, 40, 200));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    &::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background-color: #000;
+        border: 2px solid #000;
+        z-index: 100;
+    }
+}
+
+.current-stories.active {
+    background-image: linear-gradient(rgba(208, 208, 208, 0.816), rgba(208, 208, 208, 0.816)), /*here must be*/
+    linear-gradient(to right, rgba(208, 208, 208, 0.816), rgba(208, 208, 208, 0.816));
+}
