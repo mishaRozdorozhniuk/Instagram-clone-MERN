@@ -67,17 +67,6 @@ const PostList = () => {
       ],
     },
   ]);
-
-  const [postComments, setPostComments] = useState([
-    {
-      senderName: '__procherk__',
-      senderCommentText: 'оставил коммент сам себе',
-    },
-    {
-      senderName: 'lordOfDark',
-      senderCommentText: 'я бы теней добавил',
-    },
-  ]);
   const [postCommentInfo, setPostCommentInfo] = useState('');
   const [comentId, setComentId] = useState(null);
   const { setCurrentPostId } = useContext(AuthContext);
@@ -87,14 +76,14 @@ const PostList = () => {
   //     .then((res) => res.json())
   //     .then((data) => setPostsData(data));
   // }, []);
+
   const currentPostInput = postsPata.find(({ id }) => id === comentId);
+
   const currentPostId = currentPostInput?.id;
-  console.log(currentPostId == comentId);
-  setCurrentPostId(currentPostId);
 
-  useEffect(() => {}, []);
-
-  const handleCommentPost = (e, inputId) => {};
+  useEffect(() => {
+    setCurrentPostId(currentPostId);
+  }, [comentId, currentPostId]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

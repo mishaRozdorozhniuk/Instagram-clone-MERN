@@ -26,6 +26,7 @@ const PostFooter = ({
   modalComments,
 }) => {
   const [showModal, setShowModal] = useState(false);
+
   const handleShowModal = () => {
     setShowModal(!showModal);
   };
@@ -64,10 +65,13 @@ const PostFooter = ({
           modalImg={masterpiece}
           setPostCommentInfo={setPostCommentInfo}
           modalComments={false}
+          handleSubmit={handleSubmit}
           handleShowModal={handleShowModal}
           comment={comment}
           setComentId={setComentId}
+          id={id}
           countOfLikes={countOfLikes}
+          postCommentInfo={postCommentInfo}
         >
           <PostHeader nickName={nickName} subtitle={subtitle} />
           <div className="modal__comment-wrapper">

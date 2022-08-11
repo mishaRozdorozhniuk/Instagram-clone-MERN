@@ -10,6 +10,8 @@ const Modal = ({
   setComentId,
   children,
   handleShowModal,
+  postCommentInfo,
+  handleSubmit,
   id,
 }) => {
   return (
@@ -27,7 +29,9 @@ const Modal = ({
               id={id}
               setComentId={setComentId}
               setPostCommentInfo={setPostCommentInfo}
+              postCommentInfo={postCommentInfo}
               countOfLikes={countOfLikes}
+              handleSubmit={handleSubmit}
               modalComments={modalComments}
             />
           </div>
