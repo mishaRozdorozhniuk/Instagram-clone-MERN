@@ -5,14 +5,17 @@ import PostFooter from './PostFooter';
 import './Post.scss';
 
 const Post = ({
-  handleCommentPost,
+  setPostCommentInfo,
+  handleSubmit,
   postCommentInfo,
+  setComentId,
   comment,
   dateOfPost,
   nickName,
   countOfLikes,
   photoDescription,
   subtitle,
+  key,
   id,
 }) => {
   return (
@@ -34,12 +37,14 @@ const Post = ({
       <img className="post__photo" src={masterpiece} alt="post-foto1" />
       <PostFooter
         id={id}
-        handleCommentPost={handleCommentPost}
         postCommentInfo={postCommentInfo}
         nickName={nickName}
+        setComentId={setComentId}
         subtitle={subtitle}
+        handleSubmit={handleSubmit}
         comment={comment}
         dateOfPost={dateOfPost}
+        setPostCommentInfo={setPostCommentInfo}
         countOfLikes={countOfLikes}
         modalComments={true}
         photoDescription={photoDescription}

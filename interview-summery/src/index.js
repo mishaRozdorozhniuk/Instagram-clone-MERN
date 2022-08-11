@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ReactRouters } from './routs/Routes';
 import { AuthContext } from '../src/contex/index.js';
+import App from './App';
 import './index.css';
 
 // import { Provider } from 'react-redux';
@@ -37,9 +37,10 @@ import './index.css';
 
 const Main = () => {
   const [isAuth, setIsAuth] = useState(false);
+  const [currentPostId, setCurrentPostId] = useState(null);
 
   return (
-    <AuthContext.Provider value={{ isAuth, setIsAuth }}>
+    <AuthContext.Provider value={{ currentPostId, setCurrentPostId, isAuth, setIsAuth }}>
       <ReactRouters>
         <App />
       </ReactRouters>

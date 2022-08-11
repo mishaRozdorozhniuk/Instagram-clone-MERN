@@ -57,6 +57,7 @@
 
 .modal__comment-wrapper {
     flex: 7;
+    overflow-x: hidden;
 }
 
 .modal-comments {

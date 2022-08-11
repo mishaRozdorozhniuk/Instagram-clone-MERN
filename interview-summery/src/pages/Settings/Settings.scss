@@ -1,0 +1,15 @@
+.edit-prof {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    margin-top: 60px;
+    &__aside {
+        border-right: 1px solid #ccc;
+        display: inline-block;
+        flex: 1;
+    }
+    &__tabs {
+        list-style: none;
+    }
+}

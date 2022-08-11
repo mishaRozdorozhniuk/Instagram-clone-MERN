@@ -2,7 +2,16 @@ import React from 'react';
 import PostFooter from '../Posts/PostFooter';
 import './Modal.css';
 
-const Modal = ({ countOfLikes, modalImg, modalComments, children, handleShowModal }) => {
+const Modal = ({
+  setPostCommentInfo,
+  countOfLikes,
+  modalImg,
+  modalComments,
+  setComentId,
+  children,
+  handleShowModal,
+  id,
+}) => {
   return (
     <div className="fixed-modal">
       <div className="modal modal-wrapper">
@@ -14,7 +23,13 @@ const Modal = ({ countOfLikes, modalImg, modalComments, children, handleShowModa
           <img className="modal-img" src={modalImg} alt="" />
           <div className="modal-comments">
             {children}
-            <PostFooter countOfLikes={countOfLikes} modalComments={modalComments} />
+            <PostFooter
+              id={id}
+              setComentId={setComentId}
+              setPostCommentInfo={setPostCommentInfo}
+              countOfLikes={countOfLikes}
+              modalComments={modalComments}
+            />
           </div>
         </div>
       </div>

@@ -14,17 +14,18 @@ import './Post.scss';
 const PostFooter = ({
   comment,
   dateOfPost,
+  handleSubmit,
   countOfLikes,
+  setComentId,
   photoDescription,
   nickName,
   subtitle,
-  handleCommentPost,
+  setPostCommentInfo,
   postCommentInfo,
   id,
   modalComments,
 }) => {
   const [showModal, setShowModal] = useState(false);
-
   const handleShowModal = () => {
     setShowModal(!showModal);
   };
@@ -61,15 +62,17 @@ const PostFooter = ({
       {showModal && (
         <Modal
           modalImg={masterpiece}
+          setPostCommentInfo={setPostCommentInfo}
           modalComments={false}
           handleShowModal={handleShowModal}
           comment={comment}
+          setComentId={setComentId}
           countOfLikes={countOfLikes}
         >
           <PostHeader nickName={nickName} subtitle={subtitle} />
           <div className="modal__comment-wrapper">
-            {comment.map((c) => (
-              <div className="modal__comments-inner">
+            {comment.map((c, index) => (
+              <div key={index} className="modal__comments-inner">
                 <StoriesUser size={true} />
                 <NickName className="modal__comments-nick" nameOfUser={c.senderName} />
                 <div className="modal__comments-info">{c.senderCommentText}</div>
@@ -80,7 +83,9 @@ const PostFooter = ({
       )}
       <PostComments
         id={id}
-        handleCommentPost={handleCommentPost}
+        setComentId={setComentId}
+        handleSubmit={handleSubmit}
+        setPostCommentInfo={setPostCommentInfo}
         postCommentInfo={postCommentInfo}
       />
     </>

@@ -1,0 +1,101 @@
+@import '../../mixins.scss';
+.form {
+    @include flexCentering;
+    flex-direction: column;
+    width: 100%;
+    flex: 3;
+    &__group {
+        @include flexCentering;
+        &-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-right: 24px;
+            width: 240px;
+        }
+        &-name.bio {
+            align-self: flex-start;
+        }
+    }
+    &__important {
+        max-width: 366px;
+        margin: 15px 0 15px auto;
+        &-info {
+            color: rgb(100, 100, 100);
+            font-size: 12px;
+        }
+    }
+    &__important.email {
+        margin: 0 0 0 auto;
+        max-width: 347px;
+        &-info {
+            margin-bottom: 15px;
+        }
+    }
+    &__bio {
+        padding: 30px 90px;
+        border: 1px solid #ccc;
+        width: 175px;
+        resize: none;
+    }
+    &__personal {
+        color: rgba(56, 56, 56, 0.802);
+        font-size: 14px;
+        font-weight: 600;
+    }
+    &__user {
+        display: flex;
+        margin: 25px 175px 15px 0;
+        &-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 0;
+            cursor: pointer;
+            margin-right: 30px;
+        }
+        &-name {
+            font-weight: 500;
+            font-size: 19px;
+            margin: 0;
+        }
+        &-change {
+            color: rgb(53, 147, 241);
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
+    &-submit__wrapper {
+        margin-bottom: 30px;
+        margin-left: 180px;
+    }
+    &__submit-btn {
+        color: #fff;
+        background-color: rgb(53, 147, 241);
+        border-radius: 4px;
+        border: none;
+        padding: 8px;
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 100px;
+    }
+    &__submit-info {
+        color: rgb(40, 134, 227);
+        font-weight: bold;
+        font-size: 14px;
+    }
+    &-inner {
+        margin-right: 60px;
+    }
+}
+
+.block {
+    width: 100%;
+    align-items: beseline;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.form__important-info {
+    margin-top: 0;
+}
