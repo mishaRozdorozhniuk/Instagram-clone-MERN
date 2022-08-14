@@ -58,11 +58,13 @@
 .modal__comment-wrapper {
     flex: 7;
     overflow-x: hidden;
+    overflow: scroll;
 }
 
 .modal-comments {
     display: flex;
     flex-direction: column;
+    height: 694px;
 }
 
 .modal__cross {
