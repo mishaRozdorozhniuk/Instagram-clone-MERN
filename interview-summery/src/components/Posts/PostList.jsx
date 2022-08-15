@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../contex';
+import profilePostFoto1 from '../../icons/profPost1.jpeg';
+import profilePostFoto2 from '../../icons/profPost2.jpeg';
+import profilePostFoto3 from '../../icons/profPost3.jpeg';
+import profilePostFoto4 from '../../icons/profPost4.jpeg';
+import profilePostFoto5 from '../../icons/profPost5.jpeg';
 import Post from './Post';
 
 const PostList = () => {
@@ -11,6 +16,7 @@ const PostList = () => {
       countOfLikes: 98,
       photoDescription: 'I love my girlfriend 💗💗💗',
       dateOfPost: '11 минут назад',
+      photoOfPost: profilePostFoto1,
       comment: [
         {
           senderName: 'sonnechkaaa',
@@ -37,6 +43,7 @@ const PostList = () => {
       countOfLikes: 54,
       photoDescription: '__procherk__ girlfriend the best one',
       dateOfPost: '3 дней назад',
+      photoOfPost: profilePostFoto2,
       comment: [
         {
           senderName: 'platitenalogi',
@@ -55,6 +62,7 @@ const PostList = () => {
       countOfLikes: 100357,
       photoDescription: 'I love you __procherk__',
       dateOfPost: '23 минут назад',
+      photoOfPost: profilePostFoto3,
       comment: [
         {
           senderName: '__procherk__',
@@ -63,6 +71,48 @@ const PostList = () => {
         {
           senderName: 'lordOfDark',
           senderCommentText: 'я бы теней добавил',
+        },
+      ],
+    },
+    {
+      id: 4,
+      nickName: 'armagedon',
+      subtitle: 'Give me five dollars please',
+      countOfLikes: 94,
+      photoDescription: 'I love you __procherk__',
+      dateOfPost: '1 час назад',
+      photoOfPost: profilePostFoto4,
+      comment: [
+        {
+          senderName: 'ancous',
+          senderCommentText: 'Hey milka I love fish',
+        },
+        {
+          senderName: 'milka',
+          senderCommentText: 'I love milka men',
+        },
+      ],
+    },
+    {
+      id: 5,
+      nickName: 'maxim',
+      subtitle: 'Give me five dollars please',
+      countOfLikes: 94,
+      photoDescription: 'I love you __procherk__',
+      dateOfPost: '1 час назад',
+      photoOfPost: profilePostFoto5,
+      comment: [
+        {
+          senderName: 'cucumber365',
+          senderCommentText: '...',
+        },
+        {
+          senderName: 'kk_irill',
+          senderCommentText: 'I am kirill',
+        },
+        {
+          senderName: 'Ulbi tv',
+          senderCommentText: 'check my new video dude',
         },
       ],
     },
@@ -85,27 +135,47 @@ const PostList = () => {
     setCurrentPostId(currentPostId);
   }, [comentId, currentPostId]);
 
+  function isEmpty(str) {
+    if (str.trim() == '') return;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const createdBy = 'Procherk';
-    let newCommentPost = {
-      id: comentId,
-      senderName: createdBy,
-      senderCommentText: postCommentInfo,
-    };
-    postsPata.map(({ comment }, index) => {
-      if (index + 1 === newCommentPost.id) {
-        comment.push(newCommentPost);
-      }
-    });
-    setPostsData(postsPata);
-    setPostCommentInfo('');
+    if (postCommentInfo == false) {
+      return false;
+    } else {
+      const createdBy = 'Procherk';
+      let newCommentPost = {
+        id: comentId,
+        senderName: createdBy,
+        senderCommentText: postCommentInfo,
+      };
+      postsPata.map(({ comment }, index) => {
+        if (index + 1 === newCommentPost.id) {
+          comment.push(newCommentPost);
+        }
+      });
+      setPostsData(postsPata);
+      setPostCommentInfo('');
+    }
   };
 
   return (
     <div>
       {postsPata.map(
-        ({ comment, dateOfPost, nickName, countOfLikes, photoDescription, subtitle, id }, i) => (
+        (
+          {
+            comment,
+            photoOfPost,
+            dateOfPost,
+            nickName,
+            countOfLikes,
+            photoDescription,
+            subtitle,
+            id,
+          },
+          i,
+        ) => (
           <Post
             key={i}
             id={id}
@@ -113,6 +183,7 @@ const PostList = () => {
             postCommentInfo={postCommentInfo}
             comment={comment}
             setComentId={setComentId}
+            photoOfPost={photoOfPost}
             setPostCommentInfo={setPostCommentInfo}
             nickName={nickName}
             countOfLikes={countOfLikes}

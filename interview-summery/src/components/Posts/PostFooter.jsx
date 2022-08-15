@@ -20,6 +20,7 @@ const PostFooter = ({
   photoDescription,
   nickName,
   subtitle,
+  photoOfPost,
   setPostCommentInfo,
   postCommentInfo,
   id,
@@ -62,7 +63,7 @@ const PostFooter = ({
       </div>
       {showModal && (
         <Modal
-          modalImg={masterpiece}
+          modalImg={photoOfPost}
           setPostCommentInfo={setPostCommentInfo}
           modalComments={false}
           handleSubmit={handleSubmit}

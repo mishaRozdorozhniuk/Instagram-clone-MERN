@@ -15,6 +15,7 @@ const Post = ({
   countOfLikes,
   photoDescription,
   subtitle,
+  photoOfPost,
   key,
   id,
 }) => {
@@ -34,11 +35,13 @@ const Post = ({
         </div>
         <span className="post__dots">...</span>
       </div>
-      <img className="post__photo" src={masterpiece} alt="post-foto1" />
+      {/* <img className="post__photo" src={masterpiece} alt="post-foto1" /> */}
+      <img className="post__photo" src={photoOfPost} alt="post-foto1" />
       <PostFooter
         id={id}
         postCommentInfo={postCommentInfo}
         nickName={nickName}
+        photoOfPost={photoOfPost}
         setComentId={setComentId}
         subtitle={subtitle}
         handleSubmit={handleSubmit}
