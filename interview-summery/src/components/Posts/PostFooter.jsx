@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import like from '../../icons/like.png';
 import comments from '../../icons/comments.webp';
-import save from '../../icons/save.webp';
 import Share from '../../icons/Share';
 import NickName from '../NickName/NickName';
 import Modal from '../Modal/Modal';
 import PostHeader from '../Posts/PostHeader';
 import StoriesUser from '../Stories/StoriesUser';
 import PostComments from './PostComments';
-import masterpiece from '../Posts/post-photo1.jpeg';
 import './Post.scss';
+import SaveIcon from './SaveIcon';
 
 const PostFooter = ({
   comment,
@@ -18,6 +17,7 @@ const PostFooter = ({
   countOfLikes,
   setComentId,
   photoDescription,
+  postsPata,
   nickName,
   subtitle,
   photoOfPost,
@@ -27,21 +27,36 @@ const PostFooter = ({
   modalComments,
 }) => {
   const [showModal, setShowModal] = useState(false);
+  const [savePost, setSavePost] = useState(false);
 
   const handleShowModal = () => {
     setShowModal(!showModal);
   };
 
+  const savedPostId = () => {
+    setSavePost(!savePost);
+
+    const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+
+    const currentPostId = postsPata.find(({ id: idx }) => idx === id);
+
+    posts.push(currentPostId);
+
+    localStorage.setItem('posts', JSON.stringify(posts));
+  };
+
   return (
     <>
-      <div className="post__footer">
+      <div className="post-footer-wrapper">
         <div className="post__footer-icons">
           <div className="post-icons-inner">
             <img className="like-icon" src={like} alt="like" />
             <img className="comments-icon" src={comments} alt="comments" />
             <Share />
           </div>
-          <img className="save-icon" src={save} alt="save" />
+          <div onClick={() => savedPostId()}>
+            <SaveIcon savePost={savePost} />
+          </div>
         </div>
         <span className="post__likes">{countOfLikes} отметок "Нравится"</span>
         <div className="likes-inner">

@@ -12,6 +12,7 @@ const Post = ({
   comment,
   dateOfPost,
   nickName,
+  postsPata,
   countOfLikes,
   photoDescription,
   subtitle,
@@ -49,6 +50,7 @@ const Post = ({
         dateOfPost={dateOfPost}
         setPostCommentInfo={setPostCommentInfo}
         countOfLikes={countOfLikes}
+        postsPata={postsPata}
         modalComments={true}
         photoDescription={photoDescription}
       />

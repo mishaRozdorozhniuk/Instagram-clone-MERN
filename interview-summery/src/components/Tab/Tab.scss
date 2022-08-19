@@ -21,3 +21,35 @@
     width: 200px;
     text-align: left;
 }
+
+.profile-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-list::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: rgba(204, 204, 204, 0.571);
+    width: 930px;
+    margin-bottom: 50px;
+    margin-right: 19px;
+}
+
+.profile-item {
+    background-color: none;
+    text-transform: uppercase;
+    list-style: none;
+    margin: 0 20px;
+}
+
+.profile-btn {
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

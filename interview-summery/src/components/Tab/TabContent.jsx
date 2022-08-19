@@ -1,9 +1,9 @@
 import './Tab.scss';
 
-const TabContent = ({ title, setSelectedTab, index }) => {
+const TabContent = ({ title, btnClass, itemClass, setSelectedTab, index }) => {
   return (
-    <li className="tab-item">
-      <button className="tab-btn" onClick={() => setSelectedTab(index)}>
+    <li className={itemClass}>
+      <button className={btnClass} onClick={() => setSelectedTab(index)}>
         {title}
       </button>
     </li>

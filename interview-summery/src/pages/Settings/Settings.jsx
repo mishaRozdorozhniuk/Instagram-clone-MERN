@@ -22,7 +22,12 @@ const EditProfile = () => {
   return (
     <section className="edit-prof container">
       <aside className="edit-prof__aside">
-        <Tabs setSelectedTab={setSelectedTab}>
+        <Tabs
+          btnClass="tab-btn"
+          itemClass="tab-item"
+          className="tab-list"
+          setSelectedTab={setSelectedTab}
+        >
           <Tab title="Edit Profile">Edit Profile</Tab>
           <Tab title="Change Password">Change Password</Tab>
           <Tab title="Apps and websites">Apps and websites</Tab>

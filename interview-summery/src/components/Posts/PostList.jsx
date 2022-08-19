@@ -41,7 +41,7 @@ const PostList = () => {
       nickName: 'platitenalogi',
       subtitle: 'Second best programmer in the world',
       countOfLikes: 54,
-      photoDescription: '__procherk__ girlfriend the best one',
+      photoDescription: 'your girlfriend the best one',
       dateOfPost: '3 дней назад',
       photoOfPost: profilePostFoto2,
       comment: [
@@ -79,7 +79,7 @@ const PostList = () => {
       nickName: 'armagedon',
       subtitle: 'Give me five dollars please',
       countOfLikes: 94,
-      photoDescription: 'I love you __procherk__',
+      photoDescription: 'I want smuzi',
       dateOfPost: '1 час назад',
       photoOfPost: profilePostFoto4,
       comment: [
@@ -135,10 +135,6 @@ const PostList = () => {
     setCurrentPostId(currentPostId);
   }, [comentId, currentPostId]);
 
-  function isEmpty(str) {
-    if (str.trim() == '') return;
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (postCommentInfo == false) {
@@ -182,6 +178,7 @@ const PostList = () => {
             handleSubmit={handleSubmit}
             postCommentInfo={postCommentInfo}
             comment={comment}
+            postsPata={postsPata}
             setComentId={setComentId}
             photoOfPost={photoOfPost}
             setPostCommentInfo={setPostCommentInfo}
