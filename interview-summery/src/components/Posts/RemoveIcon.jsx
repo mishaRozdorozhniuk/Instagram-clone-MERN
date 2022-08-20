@@ -13,8 +13,8 @@ export default function SaveIcon({ remove }) {
       width="34"
     >
       <polygon
-        fill={remove ? '#000' : 'none'}
-        color={remove ? '#000' : 'none'}
+        fill={remove && '#000'}
+        color={remove && '#000'}
         points="20 21 12 13.44 4 21 4 3 20 3 20 21"
         stroke="currentColor"
         stroke-linecap="round"

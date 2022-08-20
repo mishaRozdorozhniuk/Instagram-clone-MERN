@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import like from '../../icons/like.png';
 import comments from '../../icons/comments.webp';
-import Share from '../../icons/Share';
 import NickName from '../NickName/NickName';
 import Modal from '../Modal/Modal';
 import PostHeader from '../Posts/PostHeader';
 import StoriesUser from '../Stories/StoriesUser';
 import PostComments from './PostComments';
+import PostFooterIcons from './PostFooterIcons';
 import './Post.scss';
-import SaveIcon from './SaveIcon';
 
 const PostFooter = ({
   comment,
@@ -35,7 +34,6 @@ const PostFooter = ({
 
   const savedPostId = () => {
     setSavePost(!savePost);
-
     const posts = JSON.parse(localStorage.getItem('posts') || '[]');
 
     const currentPostId = postsPata.find(({ id: idx }) => idx === id);
@@ -45,19 +43,28 @@ const PostFooter = ({
     localStorage.setItem('posts', JSON.stringify(posts));
   };
 
+  const removePostId = (idx) => {
+    localStorage.removeItem('favs');
+    setSavePost(false);
+
+    const posts = JSON.parse(localStorage.getItem('posts') || '[]');
+
+    const filteredPost = posts.filter((e) => e.id !== idx);
+
+    localStorage.setItem('posts', JSON.stringify(filteredPost));
+  };
+
   return (
     <>
       <div className="post-footer-wrapper">
-        <div className="post__footer-icons">
-          <div className="post-icons-inner">
-            <img className="like-icon" src={like} alt="like" />
-            <img className="comments-icon" src={comments} alt="comments" />
-            <Share />
-          </div>
-          <div onClick={() => savedPostId()}>
-            <SaveIcon savePost={savePost} />
-          </div>
-        </div>
+        <PostFooterIcons
+          removePostId={removePostId}
+          savedPostId={savedPostId}
+          id={id}
+          savePost={savePost}
+          like={like}
+          comments={comments}
+        />
         <span className="post__likes">{countOfLikes} отметок "Нравится"</span>
         <div className="likes-inner">
           <span>

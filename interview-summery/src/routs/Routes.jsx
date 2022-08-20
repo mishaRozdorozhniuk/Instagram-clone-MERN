@@ -6,6 +6,7 @@ import Settings from '../pages/Settings/Settings';
 import Header from '../components/Header/Header';
 import Profile from '../pages/Profile/Profile';
 import Login from '../pages/Login/Login';
+import SavedPosts from '../pages/SavedPosts/SavedPosts';
 import App from '../App';
 
 export const ReactRouters = () => {
@@ -18,6 +19,7 @@ export const ReactRouters = () => {
         <Routes>
           <Route exact="true" path="/" element={<App />} />
           <Route exact="true" path="/profile" element={<Profile />} />
+          <Route exact="true" path="/savedPosts" element={<SavedPosts />} />
           <Route exact="true" path="/profile/:profileName" element={<ProfileCurrent />} />
           <Route exact="true" path="/settings" element={<Settings />} />
         </Routes>

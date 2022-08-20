@@ -137,6 +137,7 @@ const PostList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (postCommentInfo == false) {
       return false;
     } else {
@@ -146,6 +147,7 @@ const PostList = () => {
         senderName: createdBy,
         senderCommentText: postCommentInfo,
       };
+
       postsPata.map(({ comment }, index) => {
         if (index + 1 === newCommentPost.id) {
           comment.push(newCommentPost);
