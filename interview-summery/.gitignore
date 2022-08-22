@@ -1,4 +1,4 @@
 node_modules
 redux
 .DS_Store
-server
+./server
