@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/instagram-app/static/css/main.a5da19f1.css",
+    "main.js": "/instagram-app/static/js/main.6fa99953.js",
+    "static/js/787.4ee7d015.chunk.js": "/instagram-app/static/js/787.4ee7d015.chunk.js",
+    "static/media/profPost1.jpeg": "/instagram-app/static/media/profPost1.80ee4b581da72594a997.jpeg",
+    "static/media/profPost6.jpeg": "/instagram-app/static/media/profPost6.71a9190f5894122b742a.jpeg",
+    "static/media/profPost8.jpeg": "/instagram-app/static/media/profPost8.74cddb00a58797f44aa2.jpeg",
+    "static/media/profPost2.jpeg": "/instagram-app/static/media/profPost2.99db9236b3844aec59f5.jpeg",
+    "static/media/header-avatar.jpeg": "/instagram-app/static/media/header-avatar.2911ec2b85a1f9d9d0ec.jpeg",
+    "static/media/profPost3.jpeg": "/instagram-app/static/media/profPost3.44d25c3dffa922cc09c3.jpeg",
+    "static/media/profPost4.jpeg": "/instagram-app/static/media/profPost4.20fc218c072d21c52d6d.jpeg",
+    "static/media/profPost5.jpeg": "/instagram-app/static/media/profPost5.f2fc3379f09833c4aa25.jpeg",
+    "static/media/post-photo1.jpeg": "/instagram-app/static/media/post-photo1.c1f229e69a3634e07869.jpeg",
+    "static/media/profPost7.jpeg": "/instagram-app/static/media/profPost7.e83a374be1a117d78db4.jpeg",
+    "static/media/Instagram_logo.png": "/instagram-app/static/media/Instagram_logo.c431545bdf9c0367fddb.png",
+    "static/media/like.png": "/instagram-app/static/media/like.419926ce68c675b0764f.png",
+    "static/media/comments.webp": "/instagram-app/static/media/comments.56c2f7f42d8c391e0eff.webp",
+    "index.html": "/instagram-app/index.html",
+    "main.a5da19f1.css.map": "/instagram-app/static/css/main.a5da19f1.css.map",
+    "main.6fa99953.js.map": "/instagram-app/static/js/main.6fa99953.js.map",
+    "787.4ee7d015.chunk.js.map": "/instagram-app/static/js/787.4ee7d015.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a5da19f1.css",
+    "static/js/main.6fa99953.js"
+  ]
+}
