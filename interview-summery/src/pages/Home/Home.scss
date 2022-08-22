@@ -1,3 +1,4 @@
+@import '../../breakpoints.scss';
 .home-container {
     max-width: 821px;
     display: grid;
@@ -16,6 +17,7 @@
     width: 470px;
     margin-bottom: 15px;
     border-radius: 8px;
+    margin-top: 20px;
     border: 1px solid rgb(200, 200, 200);
     background-color: #fff;
 }
@@ -33,10 +35,31 @@
     padding: 10px;
 }
 
-main {
-    padding-top: 25px;
-}
-
 body {
     background-color: rgb(250, 250, 250);
+}
+
+@include respond-to(lg-medium) {
+    .subscriberes-block {
+        display: none;
+    }
+    .home-container {
+        grid-template-columns: 1fr;
+    }
+    .info-block {
+        align-items: center;
+        margin: 0;
+    }
+}
+
+@include respond-to(sm-large) {
+    .slider-block {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 460px) {
+    header {
+        width: 443px;
+    }
 }

@@ -1,3 +1,4 @@
+@import '../../breakpoints.scss';
 .header {
     background-color: #fff;
     border-bottom: 1px solid rgb(216, 216, 216);
@@ -94,4 +95,20 @@ svg {
 
 .icon-home {
     width: 26px;
+}
+
+@include respond-to(sm-large) {
+    .header {
+        &__search {
+            display: none;
+        }
+    }
+}
+
+@include respond-to(lg-small) {
+    .header {
+        &__list {
+            padding: 0;
+        }
+    }
 }

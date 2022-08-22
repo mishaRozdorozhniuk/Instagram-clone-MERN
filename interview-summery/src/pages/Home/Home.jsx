@@ -2,7 +2,7 @@ import React from 'react';
 import PostList from '../../components/Posts/PostList';
 import Recomendation from '../../components/Recomendation/Recomendation';
 import SimpleSlider from '../../components/Stories/Stories';
-import './Home.css';
+import './Home.scss';
 
 const Home = () => {
   return (
@@ -16,9 +16,9 @@ const Home = () => {
             <PostList />
           </section>
         </div>
-        <div className="subscriberes-block">
+        <section className="subscriberes-block">
           <Recomendation />
-        </div>
+        </section>
       </div>
     </main>
   );

@@ -6,11 +6,11 @@ import './Recomendation.scss';
 const Recomendation = () => {
   const [data, setData] = useState({});
 
-  useEffect(() => {
-    fetch('http://localhost:3003/posts')
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:3003/posts')
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data));
+  // }, []);
 
   return (
     <section className="rec">
