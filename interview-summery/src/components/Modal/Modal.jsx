@@ -1,6 +1,6 @@
 import React from 'react';
 import PostFooter from '../Posts/PostFooter';
-import './Modal.css';
+import './Modal.scss';
 
 const Modal = ({
   setPostCommentInfo,

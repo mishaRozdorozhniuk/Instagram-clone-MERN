@@ -19,6 +19,7 @@
         height: 32px;
         padding: 15px 10px 10px 10px;
         border-bottom: 1px solid rgba(230, 230, 230, 0.886);
+        grid-area: "post-header";
     }
     &__description {
         color: rgb(142, 142, 142);
@@ -148,6 +149,7 @@ a.post__nick {
     margin-left: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
+    grid-area: "post-icons";
 }
 
 @include respond-to(lg-small) {
