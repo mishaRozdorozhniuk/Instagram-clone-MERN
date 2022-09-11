@@ -1,0 +1,86 @@
+    .ss-page {
+        background-color: rgb(34, 34, 34);
+        height: 100vh;
+        // padding-left: 50%;
+    }
+    
+    h2 {
+        color: #000;
+    }
+    
+    .slick-prev,
+    .slick-next {
+        z-index: 1;
+        background-color: #fff !important;
+        border-radius: 50%;
+        z-index: 2;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 1px 0px 25px -6px #000000;
+        &::before {
+            content: "";
+            height: 1px;
+            width: 8px;
+            background-color: #000;
+            position: absolute;
+            top: 7px;
+        }
+        &::after {
+            content: "";
+            height: 1px;
+            width: 8px;
+            background-color: #000;
+            position: absolute;
+            top: 12px;
+        }
+    }
+    
+    .slick-prev {
+        left: 16px;
+        top: 52px;
+        &::before {
+            transform: rotate(-45deg);
+            left: 5px;
+        }
+        &::after {
+            transform: rotate(45deg);
+            left: 5px;
+        }
+    }
+    
+    .slick-next {
+        left: 428px;
+        &::before {
+            transform: rotate(45deg);
+            left: 6px;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            left: 6px;
+        }
+    }
+    
+    .slick-list {
+        max-width: 500px;
+        height: calc(50vh - 100px);
+        width: auto;
+    }
+    
+    .slick-track {
+        left: 10px;
+    }
+    
+    .slick-track {
+        margin: auto;
+    }
+    
+    .ss-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    // If smth wrong 
+    .ss-wrapper .slick-list {
+        max-width: 972px;
+    }

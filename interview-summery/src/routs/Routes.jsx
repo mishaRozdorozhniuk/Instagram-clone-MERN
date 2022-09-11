@@ -7,6 +7,7 @@ import Header from '../components/Header/Header';
 import Profile from '../pages/Profile/Profile';
 import Login from '../pages/Login/Login';
 import SavedPosts from '../pages/SavedPosts/SavedPosts';
+import SloriesSliderPage from '../pages/StoriesSlider/StoriesSliderPage';
 import App from '../App';
 
 export const ReactRouters = () => {
@@ -22,6 +23,7 @@ export const ReactRouters = () => {
           <Route exact="true" path="/savedPosts" element={<SavedPosts />} />
           <Route exact="true" path="/profile/:profileName" element={<ProfileCurrent />} />
           <Route exact="true" path="/settings" element={<Settings />} />
+          <Route exact="true" path="/stories" element={<SloriesSliderPage />} />
         </Routes>
       ) : (
         <Routes>
