@@ -13,9 +13,7 @@ const StoriesSliderItem = () => {
 
   return (
     <div className="ss-item">
-      {staticProfilePhotos.map((el) => {
-        return <img className="ss-img" src={el.postPhoto} alt={el.id} />;
-      })}
+      <img className="ss-img" src={profilePostFoto2} />;
     </div>
   );
 };

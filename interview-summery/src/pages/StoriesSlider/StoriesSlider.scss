@@ -60,10 +60,11 @@
         }
     }
     
-    .slick-list {
+    .ss-wrapper .slick-list {
         max-width: 500px;
         height: calc(50vh - 100px);
         width: auto;
+        padding: 0 69px 0 5px;
     }
     
     .slick-track {
@@ -78,9 +79,48 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 40px;
     }
     
-    // If smth wrong 
     .ss-wrapper .slick-list {
-        max-width: 972px;
+        max-width: 1243px;
+        height: 100vh;
+    }
+    
+    .ss-wrapper .slick-slide img {
+        width: 100%;
+        height: 800px;
+        object-fit: contain;
+    }
+    
+    .ss-item {
+        width: 70%;
+        height: 900px;
+        margin: 0 -64px 0 78px;
+    }
+    
+    .ss-wrapper div.slick-slide.slick-active {
+        width: 218px !important;
+        margin-right: 17px;
+        margin-left: 12px;
+    }
+    
+    div.slick-slide.slick-active.slick-center.slick-current {
+        width: 457px !important;
+        margin-left: 42px;
+        margin-right: 48px;
+    }
+    
+    .ss-wrapper .slick-list {
+        padding: 0;
+    }
+    
+    .ss-wrapper.slick-next {
+        left: 912px;
+        bottom: 453px;
+    }
+    
+    .ss-wrapper.slick-prev {
+        left: 399px;
+        top: 437px;
     }
