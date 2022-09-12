@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/instagram-app/static/css/main.a5da19f1.css",
-    "main.js": "/instagram-app/static/js/main.6fa99953.js",
+    "main.css": "/instagram-app/static/css/main.d4a8dbff.css",
+    "main.js": "/instagram-app/static/js/main.e9317578.js",
     "static/js/787.4ee7d015.chunk.js": "/instagram-app/static/js/787.4ee7d015.chunk.js",
     "static/media/profPost1.jpeg": "/instagram-app/static/media/profPost1.80ee4b581da72594a997.jpeg",
     "static/media/profPost6.jpeg": "/instagram-app/static/media/profPost6.71a9190f5894122b742a.jpeg",
@@ -17,12 +17,12 @@
     "static/media/like.png": "/instagram-app/static/media/like.419926ce68c675b0764f.png",
     "static/media/comments.webp": "/instagram-app/static/media/comments.56c2f7f42d8c391e0eff.webp",
     "index.html": "/instagram-app/index.html",
-    "main.a5da19f1.css.map": "/instagram-app/static/css/main.a5da19f1.css.map",
-    "main.6fa99953.js.map": "/instagram-app/static/js/main.6fa99953.js.map",
+    "main.d4a8dbff.css.map": "/instagram-app/static/css/main.d4a8dbff.css.map",
+    "main.e9317578.js.map": "/instagram-app/static/js/main.e9317578.js.map",
     "787.4ee7d015.chunk.js.map": "/instagram-app/static/js/787.4ee7d015.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5da19f1.css",
-    "static/js/main.6fa99953.js"
+    "static/css/main.d4a8dbff.css",
+    "static/js/main.e9317578.js"
   ]
 }
