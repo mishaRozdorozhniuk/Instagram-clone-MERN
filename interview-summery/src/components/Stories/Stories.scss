@@ -33,9 +33,23 @@ h2 {
     }
 }
 
+.ss-wrapper {
+    .slick-prev {
+        left: 399px;
+        top: 453px;
+    }
+}
+
+.ss-wrapper {
+    .slick-next {
+        left: 909px;
+        bottom: 438px;
+    }
+}
+
 .slick-prev {
-    left: 16px;
-    top: 52px;
+    left: 10px;
+    top: 57px;
     &::before {
         transform: rotate(-45deg);
         left: 5px;
@@ -47,8 +61,8 @@ h2 {
 }
 
 .slick-next {
-    left: 428px;
-    bottom: 306px;
+    left: 439px;
+    bottom: 38px;
     &::before {
         transform: rotate(45deg);
         left: 6px;

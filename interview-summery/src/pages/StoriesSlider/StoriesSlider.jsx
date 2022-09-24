@@ -21,7 +21,7 @@ export default class SliderStories extends Component {
     const settings = {
       dots: false,
       infinite: true,
-      speed: 600,
+      speed: 1000,
       slidesToShow: 3,
       slidesToScroll: 1,
       centerPadding: '60px',

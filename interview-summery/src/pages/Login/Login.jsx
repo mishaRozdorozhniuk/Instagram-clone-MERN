@@ -1,9 +1,22 @@
 import React, { useState, useContext } from 'react';
 import instLogo from '../../components/Header/Instagram_logo.png';
+import PropTypes from 'prop-types';
 import { AuthContext } from '../../contex';
 import './Login.scss';
 
-const Login = () => {
+async function loginUser(credentials) {
+  return fetch('http://localhost:8080/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(credentials),
+  }).then((data) => data.json());
+}
+
+const Login = ({ setToken }) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(true);
   const { isAuth, setIsAuth } = useContext(AuthContext);
 
@@ -15,14 +28,31 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const token = await loginUser({
+      email,
+      password,
+    });
+    setToken(token);
+  };
+
   return (
     <div className="login-wrapper">
       <div className="login">
         <img className="login-logo" src={instLogo} alt="" />
-        <form className="login-form">
-          <input type="text" placeholder="Phone number, username or email adress" />
+        <form onSubmit={handleSubmit} className="login-form">
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Phone number, username or email adress"
+          />
           <label className="password-label" htmlFor="password">
-            <input type={showPassword ? 'password' : 'text'} placeholder="Password" />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              type={showPassword ? 'password' : 'text'}
+              placeholder="Password"
+            />
             <span className="show-password" onClick={handleShowPassord}>
               {showPassword ? 'Show' : 'Hide'}
             </span>
@@ -48,3 +78,7 @@ const Login = () => {
 };
 
 export default Login;
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
+};

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthContext } from '../contex';
 import ProfileCurrent from '../components/ProfilePosts/ProfileCurrent';
@@ -11,7 +11,12 @@ import SloriesSliderPage from '../pages/StoriesSlider/StoriesSliderPage';
 import App from '../App';
 
 export const ReactRouters = () => {
+  const [token, setToken] = useState();
   const { isAuth, setIsAuth } = useContext(AuthContext);
+
+  if (!token) {
+    return <Login setToken={setToken} />;
+  }
 
   return (
     <BrowserRouter>
