@@ -11,13 +11,7 @@ import SloriesSliderPage from '../pages/StoriesSlider/StoriesSliderPage';
 import App from '../App';
 
 export const ReactRouters = () => {
-  const [token, setToken] = useState();
   const { isAuth, setIsAuth } = useContext(AuthContext);
-
-  if (!token) {
-    return <Login setToken={setToken} />;
-  }
-
   return (
     <BrowserRouter>
       <Header />

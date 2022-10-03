@@ -4,17 +4,7 @@ import PropTypes from 'prop-types';
 import { AuthContext } from '../../contex';
 import './Login.scss';
 
-async function loginUser(credentials) {
-  return fetch('http://localhost:8080/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(credentials),
-  }).then((data) => data.json());
-}
-
-const Login = ({ setToken }) => {
+const Login = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(true);
@@ -28,23 +18,14 @@ const Login = ({ setToken }) => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const token = await loginUser({
-      email,
-      password,
-    });
-    setToken(token);
-  };
-
   return (
     <div className="login-wrapper">
       <div className="login">
         <img className="login-logo" src={instLogo} alt="" />
-        <form onSubmit={handleSubmit} className="login-form">
+        <form className="login-form">
           <input
             onChange={(e) => setEmail(e.target.value)}
-            type="text"
+            type="email"
             placeholder="Phone number, username or email adress"
           />
           <label className="password-label" htmlFor="password">
@@ -78,7 +59,3 @@ const Login = ({ setToken }) => {
 };
 
 export default Login;
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};
