@@ -28,15 +28,15 @@
     justify-content: center;
 }
 
-.profile-list::before {
-    content: "";
-    position: absolute;
-    height: 1px;
-    background-color: rgba(204, 204, 204, 0.571);
-    width: 930px;
-    margin-bottom: 50px;
-    margin-right: 19px;
-}
+//.profile-list::before {
+//    content: "";
+//    position: absolute;
+//    height: 1px;
+//    background-color: rgba(204, 204, 204, 0.571);
+//    width: 930px;
+//    margin-bottom: 50px;
+//    margin-right: 19px;
+//}
 
 .profile-item {
     background-color: none;

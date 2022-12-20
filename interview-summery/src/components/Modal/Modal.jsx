@@ -12,6 +12,7 @@ const Modal = ({
   handleShowModal,
   postCommentInfo,
   handleSubmit,
+  comment,
   id,
 }) => {
   return (
@@ -27,6 +28,7 @@ const Modal = ({
             {children}
             <PostFooter
               id={id}
+              comment={comment}
               setComentId={setComentId}
               setPostCommentInfo={setPostCommentInfo}
               postCommentInfo={postCommentInfo}

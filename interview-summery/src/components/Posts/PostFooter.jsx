@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import like from '../../icons/like.png';
 import comments from '../../icons/comments.webp';
 import NickName from '../NickName/NickName';

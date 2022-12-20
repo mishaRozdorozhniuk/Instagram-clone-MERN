@@ -121,12 +121,6 @@ const PostList = () => {
   const [comentId, setComentId] = useState(null);
   const { setCurrentPostId } = useContext(AuthContext);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3003/posts')
-  //     .then((res) => res.json())
-  //     .then((data) => setPostsData(data));
-  // }, []);
-
   const currentPostInput = postsPata.find(({ id }) => id === comentId);
 
   const currentPostId = currentPostInput?.id;

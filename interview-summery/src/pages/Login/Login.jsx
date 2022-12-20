@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate } from "react-router-dom";
 import instLogo from '../../components/Header/Instagram_logo.png';
-import PropTypes from 'prop-types';
 import { AuthContext } from '../../contex';
 import './Login.scss';
 
@@ -9,9 +9,11 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [showPassword, setShowPassword] = useState(true);
   const { isAuth, setIsAuth } = useContext(AuthContext);
+  let navigate = useNavigate()
 
   const handleLogin = () => {
     setIsAuth(!isAuth);
+    navigate('')
   };
 
   const handleShowPassord = () => {

@@ -112,3 +112,17 @@ svg {
         }
     }
 }
+
+@media screen and (max-width: 432px) {
+    svg.find-people,
+    svg.dm-icon,
+    svg.header__avatar,
+    svg.home,
+    svg.messenger,
+    .like-icon,
+    svg.icon-home{
+        display: none;
+
+    }
+
+}

@@ -1,6 +1,6 @@
 @mixin respond-to($breakpoint) {
     @if $breakpoint=="sm-WEFlarge" {
-        @media (max-width: 64230) {
+        @media (max-width: 64230px) {
             @content;
         }
     }
