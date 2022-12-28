@@ -52,8 +52,7 @@ const Profile = () => {
           btnClass="profile-btn"
           itemClass="profile-item"
           className="profile-list"
-          setSelectedTab={setSelectedTab}
-        >
+          setSelectedTab={setSelectedTab}>
           <Tab title="posts">posts</Tab>
           <Tab title="saved">saved</Tab>
           <Tab title="tagged">tagged</Tab>

@@ -5,7 +5,6 @@ import profilePostFoto2 from '../../icons/profPost8.jpeg';
 import profilePostFoto3 from '../../icons/profPost6.jpeg';
 import profilePostFoto5 from '../../icons/profPost1.jpeg';
 import profilePostFoto6 from '../../icons/profPost7.jpeg';
-import StoriesSliderItem from '../../components/StoriesSliderItem/StoriesSliderItem';
 import './StoriesSlider.scss';
 
 function SampleNextArrow({ className, style, onClick }) {
@@ -28,7 +27,7 @@ export default class SliderStories extends Component {
       className: 'center',
       centerMode: true,
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
+      prevArrow: <SamplePrevArrow />
     };
     return (
       <div className="ss-wrapper">

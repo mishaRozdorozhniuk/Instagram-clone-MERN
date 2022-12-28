@@ -26,8 +26,7 @@ const EditProfile = () => {
           btnClass="tab-btn"
           itemClass="tab-item"
           className="tab-list"
-          setSelectedTab={setSelectedTab}
-        >
+          setSelectedTab={setSelectedTab}>
           <Tab title="Edit Profile">Edit Profile</Tab>
           <Tab title="Change Password">Change Password</Tab>
           <Tab title="Apps and websites">Apps and websites</Tab>

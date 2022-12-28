@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import avatar from './header-avatar.jpeg';
 import RecommendationUser from './RecommendationUser';
 import './Recomendation.scss';
 
 const Recomendation = () => {
-  const [data, setData] = useState({});
-
-  // useEffect(() => {
-  //   fetch('http://localhost:3003/posts')
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
-  // }, []);
-
   return (
     <section className="rec">
       <div className="rec-inner">

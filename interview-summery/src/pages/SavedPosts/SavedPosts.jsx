@@ -23,7 +23,7 @@ const SavedPosts = () => {
     { id: 5, postPhoto: profilePostFoto5, likes: 19, comments: 5 },
     { id: 6, postPhoto: profilePostFoto6, likes: 87, comments: 23 },
     { id: 7, postPhoto: profilePostFoto7, likes: 58, comments: 19 },
-    { id: 8, postPhoto: profilePostFoto8, likes: 67, comments: 3 },
+    { id: 8, postPhoto: profilePostFoto8, likes: 67, comments: 3 }
   ];
 
   const currentImgOfSavedPost = savedPosts.map((s) => {

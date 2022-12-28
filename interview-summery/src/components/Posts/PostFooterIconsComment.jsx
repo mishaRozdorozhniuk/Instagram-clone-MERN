@@ -12,7 +12,7 @@ const PostFooterIconsComment = ({
   like,
   id,
   comments,
-  countOfLikes,
+  countOfLikes
 }) => {
   return (
     <div className="post-footer-wrapper">

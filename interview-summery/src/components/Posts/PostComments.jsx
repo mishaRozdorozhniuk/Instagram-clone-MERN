@@ -26,8 +26,7 @@ const PostComments = ({ id, handleSubmit, setPostCommentInfo, setComentId, postC
       <button
         form="comments-form"
         type="submit"
-        className={postCommentInfo ? 'post__publish' : 'post__publish post__publish-disabled'}
-      >
+        className={postCommentInfo ? 'post__publish' : 'post__publish post__publish-disabled'}>
         Опубликовать
       </button>
     </div>

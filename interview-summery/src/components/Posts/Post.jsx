@@ -1,6 +1,5 @@
 import React from 'react';
 import StoriesUser from '../Stories/StoriesUser';
-import masterpiece from './post-photo1.jpeg';
 import PostFooter from './PostFooter';
 import './Post.scss';
 
@@ -17,8 +16,7 @@ const Post = ({
   photoDescription,
   subtitle,
   photoOfPost,
-  key,
-  id,
+  id
 }) => {
   return (
     <article className="post">
@@ -36,7 +34,6 @@ const Post = ({
         </div>
         <span className="post__dots">...</span>
       </div>
-      {/* <img className="post__photo" src={masterpiece} alt="post-foto1" /> */}
       <img className="post__photo" src={photoOfPost} alt="post-foto1" />
       <PostFooter
         id={id}

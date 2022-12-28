@@ -13,7 +13,7 @@ const Modal = ({
   postCommentInfo,
   handleSubmit,
   comment,
-  id,
+  id
 }) => {
   return (
     <div className="fixed-modal">

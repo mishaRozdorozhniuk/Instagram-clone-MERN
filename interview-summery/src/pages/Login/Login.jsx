@@ -1,22 +1,25 @@
-import React, { useState, useContext } from 'react';
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import instLogo from '../../components/Header/Instagram_logo.png';
-import { AuthContext } from '../../contex';
+import { useDispatch } from 'react-redux';
+import { userIsAuth } from '../../store/action';
 import './Login.scss';
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [, setEmail] = useState('');
+  const [, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(true);
-  const { isAuth, setIsAuth } = useContext(AuthContext);
-  let navigate = useNavigate()
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  let isAuth = false;
 
-  const handleLogin = () => {
-    setIsAuth(!isAuth);
-    navigate('')
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(userIsAuth(isAuth));
+    navigate('');
   };
 
-  const handleShowPassord = () => {
+  const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
 
@@ -36,7 +39,7 @@ const Login = () => {
               type={showPassword ? 'password' : 'text'}
               placeholder="Password"
             />
-            <span className="show-password" onClick={handleShowPassord}>
+            <span className="show-password" onClick={handleShowPassword}>
               {showPassword ? 'Show' : 'Hide'}
             </span>
           </label>

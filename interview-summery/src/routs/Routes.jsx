@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthContext } from '../contex';
 import ProfileCurrent from '../components/ProfilePosts/ProfileCurrent';
 import Settings from '../pages/Settings/Settings';
 import Header from '../components/Header/Header';
@@ -8,14 +7,16 @@ import Profile from '../pages/Profile/Profile';
 import Login from '../pages/Login/Login';
 import SavedPosts from '../pages/SavedPosts/SavedPosts';
 import SloriesSliderPage from '../pages/StoriesSlider/StoriesSliderPage';
+import { useSelector } from 'react-redux';
 import App from '../App';
 
 export const ReactRouters = () => {
-  const { isAuth, setIsAuth } = useContext(AuthContext);
+  const user = useSelector((state) => state.user);
+
   return (
     <BrowserRouter>
       <Header />
-      {isAuth ? (
+      {user.isAuth ? (
         <Routes>
           <Route exact="true" path="/" element={<App />} />
           <Route exact="true" path="/profile" element={<Profile />} />

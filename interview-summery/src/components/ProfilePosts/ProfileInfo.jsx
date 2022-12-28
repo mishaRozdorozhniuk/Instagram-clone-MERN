@@ -1,37 +1,27 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import masterpiece from '../../components/Header/header-avatar.jpeg';
 import ProfileFollowers from './ProfileFollowers';
+import useScreenWidth from '../../hooks/useScreenWidth';
 
 const ProfileInfo = () => {
-  const [windowSize, setWindowSize] = useState([
-    window.innerWidth,
-  ]);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleWindowResize);
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, [windowSize]);
+  const { windowSize } = useScreenWidth();
 
   return (
     <div className="prof__header">
       <div className="d">
-        {windowSize <= 565 ? <div className="avatar-small-scrin">
-          <h1 className="prof__header-nick">__procherk__</h1>
+        {windowSize <= 565 ? (
+          <div className="avatar-small-scrin">
+            <h1 className="prof__header-nick">__procherk__</h1>
+            <div className="prof__current">
+              <img className="prof__current-avatar" src={masterpiece} alt="profile-avatar" />
+            </div>
+          </div>
+        ) : (
           <div className="prof__current">
             <img className="prof__current-avatar" src={masterpiece} alt="profile-avatar" />
           </div>
-        </div> :  <div className="prof__current">
-          <img className="prof__current-avatar" src={masterpiece} alt="profile-avatar" />
-        </div>}
-
+        )}
       </div>
       <div className="prof__header-subs">
         <div className="prof__header-inner">

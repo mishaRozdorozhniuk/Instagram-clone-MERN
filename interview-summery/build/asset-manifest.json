@@ -21,8 +21,5 @@
     "main.fab0d3fa.js.map": "/instagram-app/static/js/main.fab0d3fa.js.map",
     "787.4ee7d015.chunk.js.map": "/instagram-app/static/js/787.4ee7d015.chunk.js.map"
   },
-  "entrypoints": [
-    "static/css/main.8e94bcbd.css",
-    "static/js/main.fab0d3fa.js"
-  ]
+  "entrypoints": ["static/css/main.8e94bcbd.css", "static/js/main.fab0d3fa.js"]
 }

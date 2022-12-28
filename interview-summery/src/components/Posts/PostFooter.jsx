@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState } from 'react';
 import like from '../../icons/like.png';
 import comments from '../../icons/comments.webp';
 import NickName from '../NickName/NickName';
@@ -23,7 +23,7 @@ const PostFooter = ({
   setPostCommentInfo,
   postCommentInfo,
   id,
-  modalComments,
+  modalComments
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [savePost, setSavePost] = useState(false);
@@ -94,8 +94,7 @@ const PostFooter = ({
           setComentId={setComentId}
           id={id}
           countOfLikes={countOfLikes}
-          postCommentInfo={postCommentInfo}
-        >
+          postCommentInfo={postCommentInfo}>
           <PostHeader nickName={nickName} subtitle={subtitle} />
           <div className="modal__comment-wrapper">
             {comment.map((c, index) => (

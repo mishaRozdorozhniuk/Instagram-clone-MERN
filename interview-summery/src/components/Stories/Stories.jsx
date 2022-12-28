@@ -20,7 +20,7 @@ export default class SimpleSlider extends Component {
       slidesToShow: 6,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
+      prevArrow: <SamplePrevArrow />
     };
     return (
       <div>

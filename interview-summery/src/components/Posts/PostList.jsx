@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../contex';
 import profilePostFoto1 from '../../icons/profPost1.jpeg';
 import profilePostFoto2 from '../../icons/profPost2.jpeg';
@@ -20,21 +20,21 @@ const PostList = () => {
       comment: [
         {
           senderName: 'sonnechkaaa',
-          senderCommentText: 'Милашка!!!',
+          senderCommentText: 'Милашка!!!'
         },
         {
           senderName: 'Anybis2005',
-          senderCommentText: 'круть',
+          senderCommentText: 'круть'
         },
         {
           senderName: 'Vlad',
-          senderCommentText: 'Hey Boy!',
+          senderCommentText: 'Hey Boy!'
         },
         {
           senderName: 'Max',
-          senderCommentText: "it' my friend",
-        },
-      ],
+          senderCommentText: "it' my friend"
+        }
+      ]
     },
     {
       id: 2,
@@ -47,13 +47,13 @@ const PostList = () => {
       comment: [
         {
           senderName: 'platitenalogi',
-          senderCommentText: 'чувак да ты на меня похож тебе не кажется?',
+          senderCommentText: 'чувак да ты на меня похож тебе не кажется?'
         },
         {
           senderName: 'Span Company',
-          senderCommentText: 'оффер на твоей почте!',
-        },
-      ],
+          senderCommentText: 'оффер на твоей почте!'
+        }
+      ]
     },
     {
       id: 3,
@@ -66,13 +66,13 @@ const PostList = () => {
       comment: [
         {
           senderName: '__procherk__',
-          senderCommentText: 'оставил коммент сам себе',
+          senderCommentText: 'оставил коммент сам себе'
         },
         {
           senderName: 'lordOfDark',
-          senderCommentText: 'я бы теней добавил',
-        },
-      ],
+          senderCommentText: 'я бы теней добавил'
+        }
+      ]
     },
     {
       id: 4,
@@ -85,13 +85,13 @@ const PostList = () => {
       comment: [
         {
           senderName: 'ancous',
-          senderCommentText: 'Hey milka I love fish',
+          senderCommentText: 'Hey milka I love fish'
         },
         {
           senderName: 'milka',
-          senderCommentText: 'I love milka men',
-        },
-      ],
+          senderCommentText: 'I love milka men'
+        }
+      ]
     },
     {
       id: 5,
@@ -104,18 +104,18 @@ const PostList = () => {
       comment: [
         {
           senderName: 'cucumber365',
-          senderCommentText: '...',
+          senderCommentText: '...'
         },
         {
           senderName: 'kk_irill',
-          senderCommentText: 'I am kirill',
+          senderCommentText: 'I am kirill'
         },
         {
           senderName: 'Ulbi tv',
-          senderCommentText: 'check my new video dude',
-        },
-      ],
-    },
+          senderCommentText: 'check my new video dude'
+        }
+      ]
+    }
   ]);
   const [postCommentInfo, setPostCommentInfo] = useState('');
   const [comentId, setComentId] = useState(null);
@@ -132,14 +132,14 @@ const PostList = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (postCommentInfo == false) {
+    if (postCommentInfo === false) {
       return false;
     } else {
       const createdBy = 'Procherk';
       let newCommentPost = {
         id: comentId,
         senderName: createdBy,
-        senderCommentText: postCommentInfo,
+        senderCommentText: postCommentInfo
       };
 
       postsPata.map(({ comment }, index) => {
@@ -164,9 +164,9 @@ const PostList = () => {
             countOfLikes,
             photoDescription,
             subtitle,
-            id,
+            id
           },
-          i,
+          i
         ) => (
           <Post
             key={i}
@@ -184,7 +184,7 @@ const PostList = () => {
             subtitle={subtitle}
             dateOfPost={dateOfPost}
           />
-        ),
+        )
       )}
     </div>
   );
