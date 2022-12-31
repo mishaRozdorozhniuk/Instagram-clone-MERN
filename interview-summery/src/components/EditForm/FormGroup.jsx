@@ -1,7 +1,7 @@
 import Input from '../Input/Input';
 import './EditForm.scss';
 
-const FormGroup = ({ labelName, type }) => {
+const FormGroup = ({ labelName, type, onChange, value, name }) => {
   return (
     <div className="form__group">
       <div>
@@ -10,7 +10,14 @@ const FormGroup = ({ labelName, type }) => {
         </label>
       </div>
       <div>
-        <Input type={type} className="edit-input" placeholder={labelName} />
+        <Input
+          onChange={onChange}
+          value={value}
+          name={name}
+          type={type}
+          className="edit-input"
+          placeholder={labelName}
+        />
       </div>
     </div>
   );

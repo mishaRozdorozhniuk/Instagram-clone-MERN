@@ -33,19 +33,19 @@ export default class SliderStories extends Component {
       <div className="ss-wrapper">
         <Slider {...settings}>
           <div className="ss-item">
-            <img className="ss-img" src={profilePostFoto1} />;
+            <img className="ss-img" src={profilePostFoto1} alt="profile-photo" />;
           </div>
           <div className="ss-item">
-            <img className="ss-img" src={profilePostFoto2} />;
+            <img className="ss-img" src={profilePostFoto2} alt="profile-photo" />;
           </div>
           <div className="ss-item">
-            <img className="ss-img" src={profilePostFoto3} />;
+            <img className="ss-img" src={profilePostFoto3} alt="profile-photo" />;
           </div>
           <div className="ss-item">
-            <img className="ss-img" src={profilePostFoto6} />;
+            <img className="ss-img" src={profilePostFoto6} alt="profile-photo" />;
           </div>
           <div className="ss-item">
-            <img className="ss-img" src={profilePostFoto5} />;
+            <img className="ss-img" src={profilePostFoto5} alt="profile-photo" />;
           </div>
         </Slider>
       </div>

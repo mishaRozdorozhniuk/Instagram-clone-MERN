@@ -24,6 +24,7 @@ const PostFooterIconsComment = ({
         like={like}
         comments={comments}
       />
+      {/* eslint-disable-next-line react/no-unescaped-entities */}
       <span className="post__likes">{countOfLikes} отметок "Нравится"</span>
       <div className="likes-inner">
         <span>

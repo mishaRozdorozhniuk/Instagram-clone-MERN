@@ -5,6 +5,8 @@ import profilePostFoto2 from '../../icons/profPost2.jpeg';
 import profilePostFoto3 from '../../icons/profPost3.jpeg';
 import profilePostFoto4 from '../../icons/profPost4.jpeg';
 import profilePostFoto5 from '../../icons/profPost5.jpeg';
+import { useDispatch } from 'react-redux';
+import { saveAllPosts } from '../../redux/action';
 import Post from './Post';
 
 const PostList = () => {
@@ -120,6 +122,11 @@ const PostList = () => {
   const [postCommentInfo, setPostCommentInfo] = useState('');
   const [comentId, setComentId] = useState(null);
   const { setCurrentPostId } = useContext(AuthContext);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(saveAllPosts(postsPata));
+  }, []);
 
   const currentPostInput = postsPata.find(({ id }) => id === comentId);
 
@@ -174,7 +181,6 @@ const PostList = () => {
             handleSubmit={handleSubmit}
             postCommentInfo={postCommentInfo}
             comment={comment}
-            postsPata={postsPata}
             setComentId={setComentId}
             photoOfPost={photoOfPost}
             setPostCommentInfo={setPostCommentInfo}

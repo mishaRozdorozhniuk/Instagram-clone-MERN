@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import instLogo from '../../components/Header/Instagram_logo.png';
 import { useDispatch } from 'react-redux';
-import { userIsAuth } from '../../store/action';
+import { userIsAuth } from '../../redux/action';
 import './Login.scss';
 
 const Login = () => {
@@ -56,6 +56,7 @@ const Login = () => {
         </span>
       </div>
       <div className="signup-part">
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <p>Don't have an account?</p>
         <a href="#">Sign up</a>
       </div>

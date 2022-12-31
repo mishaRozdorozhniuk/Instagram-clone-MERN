@@ -45,7 +45,7 @@ const SavedPosts = () => {
       )}
 
       {currentImgOfSavedPost.map((post) => (
-        <div className="prof__post-item" onClick={() => handleShowModal(post.id)}>
+        <div key={post.id} className="prof__post-item" onClick={() => handleShowModal(post.id)}>
           <img className="prof__posts-photo" src={post.photoPost} alt="post-foto1" />
         </div>
       ))}

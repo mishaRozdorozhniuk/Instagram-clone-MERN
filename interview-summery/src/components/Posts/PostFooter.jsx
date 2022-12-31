@@ -7,6 +7,7 @@ import PostHeader from '../Posts/PostHeader';
 import StoriesUser from '../Stories/StoriesUser';
 import PostComments from './PostComments';
 import PostFooterIcons from './PostFooterIcons';
+import { useSelector } from 'react-redux';
 import './Post.scss';
 
 const PostFooter = ({
@@ -16,7 +17,6 @@ const PostFooter = ({
   countOfLikes,
   setComentId,
   photoDescription,
-  postsPata,
   nickName,
   subtitle,
   photoOfPost,
@@ -27,6 +27,7 @@ const PostFooter = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [savePost, setSavePost] = useState(false);
+  const allPosts = useSelector((state) => state.homePosts.allPosts);
 
   const handleShowModal = () => {
     setShowModal(!showModal);
@@ -36,7 +37,7 @@ const PostFooter = ({
     setSavePost(!savePost);
     const posts = JSON.parse(localStorage.getItem('posts') || '[]');
 
-    const currentPostId = postsPata.find(({ id: idx }) => idx === id);
+    const currentPostId = allPosts.find(({ id: idx }) => idx === id);
 
     posts.push(currentPostId);
 
@@ -65,6 +66,7 @@ const PostFooter = ({
           like={like}
           comments={comments}
         />
+        {/* eslint-disable-next-line react/no-unescaped-entities */}
         <span className="post__likes">{countOfLikes} отметок "Нравится"</span>
         <div className="likes-inner">
           <span>

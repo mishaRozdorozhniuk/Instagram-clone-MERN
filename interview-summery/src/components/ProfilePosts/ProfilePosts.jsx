@@ -15,7 +15,7 @@ import NickName from '../NickName/NickName';
 import '../../pages/Profile/Profile.scss';
 import { AuthContext } from '../../contex';
 import { useDispatch, useSelector } from 'react-redux';
-import { currentProfilePost } from '../../store/action';
+import { currentProfilePost } from '../../redux/action';
 
 const ProfilePosts = () => {
   const [showModal, setShowModal] = useState(false);
@@ -276,7 +276,7 @@ const ProfilePosts = () => {
             {profilePostCommentOnly &&
               profilePostCommentOnly.map((c) => {
                 return (
-                  <div key={c} className="modal__comments-inner">
+                  <div key={c.id} className="modal__comments-inner">
                     <StoriesUser size={true} />
                     <NickName className="modal__comments-nick" nameOfUser={c.senderName} />
                     <div className="modal__comments-info">{c.senderCommentText}</div>
