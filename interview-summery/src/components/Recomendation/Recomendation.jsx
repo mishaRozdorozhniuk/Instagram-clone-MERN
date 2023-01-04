@@ -2,8 +2,25 @@ import React from 'react';
 import avatar from './header-avatar.jpeg';
 import RecommendationUser from './RecommendationUser';
 import './Recomendation.scss';
+import useFetch from '../../hooks/useFetch';
 
 const Recomendation = () => {
+  const { data } = useFetch('/rec/recommendations');
+  // const [rec, setRec] = useState(null);
+  //
+  // useEffect(() => {
+  //   const recommendationsInfo = async () => {
+  //     const res = await fetch('/rec/recommendations');
+  //     const json = await res.json();
+  //
+  //     if (res.ok) {
+  //       setRec(json);
+  //     }
+  //   };
+  //
+  //   recommendationsInfo();
+  // }, []);
+
   return (
     <section className="rec">
       <div className="rec-inner">
@@ -26,26 +43,16 @@ const Recomendation = () => {
           <a className="all-link">Все</a>
         </span>
       </div>
-      <RecommendationUser
-        nameOfRecUser="__procherk__"
-        additionalRecInfo="Подписаны: sonnechkaaa и 3"
-      />
-      <RecommendationUser
-        nameOfRecUser="sonnechkaaa"
-        additionalRecInfo="Новый пользователь Instagram"
-      />
-      <RecommendationUser
-        nameOfRecUser="yuungaash"
-        additionalRecInfo="Подписаны: platitenalogi и 2"
-      />
-      <RecommendationUser
-        nameOfRecUser="ukrainiancustomer"
-        additionalRecInfo="Новый пользователь Instagram"
-      />
-      <RecommendationUser
-        nameOfRecUser="platitenalogi"
-        additionalRecInfo="Подписаны: sonnechkaaa и 3"
-      />
+      {data &&
+        data.map((el) => {
+          return (
+            <RecommendationUser
+              key={el._id}
+              nameOfRecUser={el.nickName}
+              additionalRecInfo={el.additionalRecommendInfo}
+            />
+          );
+        })}
       <div className="info-about-instagram">
         <div>
           <span>Информация</span>

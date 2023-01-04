@@ -1,132 +1,23 @@
 import { useState, useEffect, useContext } from 'react';
 import { AuthContext } from '../../contex';
-import profilePostFoto1 from '../../icons/profPost1.jpeg';
-import profilePostFoto2 from '../../icons/profPost2.jpeg';
-import profilePostFoto3 from '../../icons/profPost3.jpeg';
-import profilePostFoto4 from '../../icons/profPost4.jpeg';
-import profilePostFoto5 from '../../icons/profPost5.jpeg';
 import { useDispatch } from 'react-redux';
 import { saveAllPosts } from '../../redux/action';
 import Post from './Post';
+import useFetch from '../../hooks/useFetch';
+import axios from 'axios';
 
 const PostList = () => {
-  const [postsPata, setPostsData] = useState([
-    {
-      id: 1,
-      nickName: '__procherk__',
-      subtitle: 'The best programmer in the world',
-      countOfLikes: 98,
-      photoDescription: 'I love my girlfriend 💗💗💗',
-      dateOfPost: '11 минут назад',
-      photoOfPost: profilePostFoto1,
-      comment: [
-        {
-          senderName: 'sonnechkaaa',
-          senderCommentText: 'Милашка!!!'
-        },
-        {
-          senderName: 'Anybis2005',
-          senderCommentText: 'круть'
-        },
-        {
-          senderName: 'Vlad',
-          senderCommentText: 'Hey Boy!'
-        },
-        {
-          senderName: 'Max',
-          senderCommentText: "it' my friend"
-        }
-      ]
-    },
-    {
-      id: 2,
-      nickName: 'platitenalogi',
-      subtitle: 'Second best programmer in the world',
-      countOfLikes: 54,
-      photoDescription: 'your girlfriend the best one',
-      dateOfPost: '3 дней назад',
-      photoOfPost: profilePostFoto2,
-      comment: [
-        {
-          senderName: 'platitenalogi',
-          senderCommentText: 'чувак да ты на меня похож тебе не кажется?'
-        },
-        {
-          senderName: 'Span Company',
-          senderCommentText: 'оффер на твоей почте!'
-        }
-      ]
-    },
-    {
-      id: 3,
-      nickName: 'sonnechkaaa',
-      subtitle: 'The best girlfriend in the world',
-      countOfLikes: 100357,
-      photoDescription: 'I love you __procherk__',
-      dateOfPost: '23 минут назад',
-      photoOfPost: profilePostFoto3,
-      comment: [
-        {
-          senderName: '__procherk__',
-          senderCommentText: 'оставил коммент сам себе'
-        },
-        {
-          senderName: 'lordOfDark',
-          senderCommentText: 'я бы теней добавил'
-        }
-      ]
-    },
-    {
-      id: 4,
-      nickName: 'armagedon',
-      subtitle: 'Give me five dollars please',
-      countOfLikes: 94,
-      photoDescription: 'I want smuzi',
-      dateOfPost: '1 час назад',
-      photoOfPost: profilePostFoto4,
-      comment: [
-        {
-          senderName: 'ancous',
-          senderCommentText: 'Hey milka I love fish'
-        },
-        {
-          senderName: 'milka',
-          senderCommentText: 'I love milka men'
-        }
-      ]
-    },
-    {
-      id: 5,
-      nickName: 'maxim',
-      subtitle: 'Give me five dollars please',
-      countOfLikes: 94,
-      photoDescription: 'I love you __procherk__',
-      dateOfPost: '1 час назад',
-      photoOfPost: profilePostFoto5,
-      comment: [
-        {
-          senderName: 'cucumber365',
-          senderCommentText: '...'
-        },
-        {
-          senderName: 'kk_irill',
-          senderCommentText: 'I am kirill'
-        },
-        {
-          senderName: 'Ulbi tv',
-          senderCommentText: 'check my new video dude'
-        }
-      ]
-    }
-  ]);
+  const [postsPata, setPostsData] = useState([]);
   const [postCommentInfo, setPostCommentInfo] = useState('');
   const [comentId, setComentId] = useState(null);
   const { setCurrentPostId } = useContext(AuthContext);
   const dispatch = useDispatch();
+  const { data } = useFetch('/posts/posts');
 
   useEffect(() => {
     dispatch(saveAllPosts(postsPata));
-  }, []);
+    data !== null ? setPostsData(data) : [];
+  }, [data]);
 
   const currentPostInput = postsPata.find(({ id }) => id === comentId);
 
@@ -136,7 +27,7 @@ const PostList = () => {
     setCurrentPostId(currentPostId);
   }, [comentId, currentPostId]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (postCommentInfo === false) {
@@ -154,6 +45,15 @@ const PostList = () => {
           comment.push(newCommentPost);
         }
       });
+
+      const response = await axios
+        .patch('/posts/' + '63b5aa0c09bfdb3035f07d83', currentPostInput)
+        .then((res) => console.log(res, 'res'))
+        .catch((error) => console.log('Error: ', error));
+      if (response && response.data) {
+        console.log(response);
+        console.log(response.data);
+      }
       setPostsData(postsPata);
       setPostCommentInfo('');
     }
