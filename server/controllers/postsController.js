@@ -7,6 +7,22 @@ const getPosts = async (req, res) => {
   res.status(200).json(posts)
 }
 
+const getPost = async (req, res) => {
+  const {id} = req.params
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({error: 'No such post'})
+  }
+
+  const post = await Posts.findById(id)
+
+  if (!post) {
+    return res.status(404).json({ error: 'no such post' })
+  }
+
+  res.status(200).json(post)
+}
+
 const createPost = async (req, res) => {
   const {
     nickName,
@@ -47,5 +63,6 @@ const updatePost = async (req, res) => {
 module.exports = {
   getPosts,
   createPost,
-  updatePost
+  updatePost,
+  getPost
 }

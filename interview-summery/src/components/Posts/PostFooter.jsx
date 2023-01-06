@@ -9,6 +9,8 @@ import PostComments from './PostComments';
 import PostFooterIcons from './PostFooterIcons';
 import { useSelector } from 'react-redux';
 import './Post.scss';
+import axios from 'axios';
+// import { savedPosts } from '../../redux/action';
 
 const PostFooter = ({
   comment,
@@ -28,6 +30,8 @@ const PostFooter = ({
   const [showModal, setShowModal] = useState(false);
   const [savePost, setSavePost] = useState(false);
   const allPosts = useSelector((state) => state.homePosts.allPosts);
+  // const dispatch = useDispatch();
+  // const selector = useSelector((state) => state.savedPosts.arr);
 
   const handleShowModal = () => {
     setShowModal(!showModal);
@@ -35,24 +39,26 @@ const PostFooter = ({
 
   const savedPostId = () => {
     setSavePost(!savePost);
-    const posts = JSON.parse(localStorage.getItem('posts') || '[]');
 
     const currentPostId = allPosts.find(({ id: idx }) => idx === id);
 
-    posts.push(currentPostId);
+    currentPostId.savePostFlag = true;
 
-    localStorage.setItem('posts', JSON.stringify(posts));
+    axios
+      .post(`/savedPosts/savedPost`, currentPostId)
+      .then((res) => console.log(res.data))
+      .catch((error) => console.log('Error: ', error));
   };
+  // dispatch(savedPosts(res.data))
+  const removePostId = () => {
+    const currentPostId = allPosts.find(({ id: idx }) => idx === id);
 
-  const removePostId = (idx) => {
-    localStorage.removeItem('favs');
+    axios
+      .delete(`/savedPosts/${currentPostId._id}`)
+      .then((res) => console.log(res.data))
+      .catch((error) => console.log('Error: ', error));
+
     setSavePost(false);
-
-    const posts = JSON.parse(localStorage.getItem('posts') || '[]');
-
-    const filteredPost = posts.filter((e) => e.id !== idx);
-
-    localStorage.setItem('posts', JSON.stringify(filteredPost));
   };
 
   return (
@@ -61,10 +67,10 @@ const PostFooter = ({
         <PostFooterIcons
           removePostId={removePostId}
           savedPostId={savedPostId}
-          id={id}
           savePost={savePost}
           like={like}
           comments={comments}
+          id={id}
         />
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         <span className="post__likes">{countOfLikes} отметок "Нравится"</span>

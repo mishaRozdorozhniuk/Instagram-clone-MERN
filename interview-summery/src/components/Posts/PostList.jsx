@@ -25,6 +25,9 @@ const PostList = () => {
 
   useEffect(() => {
     setCurrentPostId(currentPostId);
+    axios('/posts/posts')
+      .then((res) => dispatch(saveAllPosts(res.data)))
+      .catch((error) => console.log('Error: ', error));
   }, [comentId, currentPostId]);
 
   const handleSubmit = async (e) => {
@@ -47,7 +50,7 @@ const PostList = () => {
       });
 
       const response = await axios
-        .patch('/posts/' + '63b5aa0c09bfdb3035f07d83', currentPostInput)
+        .patch('/posts/' + currentPostInput._id, currentPostInput)
         .then((res) => console.log(res, 'res'))
         .catch((error) => console.log('Error: ', error));
       if (response && response.data) {

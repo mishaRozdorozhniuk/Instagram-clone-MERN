@@ -6,20 +6,6 @@ import useFetch from '../../hooks/useFetch';
 
 const Recomendation = () => {
   const { data } = useFetch('/rec/recommendations');
-  // const [rec, setRec] = useState(null);
-  //
-  // useEffect(() => {
-  //   const recommendationsInfo = async () => {
-  //     const res = await fetch('/rec/recommendations');
-  //     const json = await res.json();
-  //
-  //     if (res.ok) {
-  //       setRec(json);
-  //     }
-  //   };
-  //
-  //   recommendationsInfo();
-  // }, []);
 
   return (
     <section className="rec">

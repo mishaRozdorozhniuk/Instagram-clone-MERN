@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const workoutRoutes = require('./routs/workouts')
 const recommendationRoutes = require('./routs/recommendationRoutes')
 const postsRoutes = require('./routs/posts')
+const savedPostRoutes = require('./routs/savedPosts')
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 app.use('/api/workouts', workoutRoutes)
 app.use('/rec', recommendationRoutes)
 app.use('/posts', postsRoutes)
+app.use('/savedPosts', savedPostRoutes)
 
 // connect to mongo
 mongoose.set("strictQuery", false);
