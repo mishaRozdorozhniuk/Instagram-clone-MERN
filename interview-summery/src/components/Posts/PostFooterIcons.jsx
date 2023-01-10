@@ -1,18 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Share from '../../icons/Share';
 import SaveIcon from './SaveIcon';
-import axios from 'axios';
 
-const PostFooterIcons = ({ savePost, savedPostId, like, comments, removePostId }) => {
-  const [savedPostsData, setSavedPostsData] = useState([]);
-
-  useEffect(() => {
-    axios(`/savedPosts/savePost`)
-      .then((res) => setSavedPostsData(res.data))
-      .catch((error) => console.log('Error: ', error));
-  }, []);
-
-  console.log(savedPostsData);
+const PostFooterIcons = ({ trigger, savedPostId, like, comments, removePostId }) => {
   return (
     <div className="post__footer-icons">
       <div className="post-icons-inner">
@@ -20,7 +10,7 @@ const PostFooterIcons = ({ savePost, savedPostId, like, comments, removePostId }
         <img className="comments-icon" src={comments} alt="comments" />
         <Share />
       </div>
-      {!savePost ? (
+      {!trigger ? (
         <div onClick={() => savedPostId()}>
           <SaveIcon remove={false} />
         </div>

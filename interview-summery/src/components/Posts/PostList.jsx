@@ -15,8 +15,8 @@ const PostList = () => {
   const { data } = useFetch('/posts/posts');
 
   useEffect(() => {
-    dispatch(saveAllPosts(postsPata));
     data !== null ? setPostsData(data) : [];
+    dispatch(saveAllPosts(postsPata));
   }, [data]);
 
   const currentPostInput = postsPata.find(({ id }) => id === comentId);
@@ -55,7 +55,6 @@ const PostList = () => {
         .catch((error) => console.log('Error: ', error));
       if (response && response.data) {
         console.log(response);
-        console.log(response.data);
       }
       setPostsData(postsPata);
       setPostCommentInfo('');
@@ -74,7 +73,8 @@ const PostList = () => {
             countOfLikes,
             photoDescription,
             subtitle,
-            id
+            id,
+            savePostFlag
           },
           i
         ) => (
@@ -92,6 +92,7 @@ const PostList = () => {
             photoDescription={photoDescription}
             subtitle={subtitle}
             dateOfPost={dateOfPost}
+            savePostFlag={savePostFlag}
           />
         )
       )}

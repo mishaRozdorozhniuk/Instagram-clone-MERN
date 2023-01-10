@@ -7,10 +7,10 @@ import PostHeader from '../Posts/PostHeader';
 import StoriesUser from '../Stories/StoriesUser';
 import PostComments from './PostComments';
 import PostFooterIcons from './PostFooterIcons';
-import { useSelector } from 'react-redux';
-import './Post.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-// import { savedPosts } from '../../redux/action';
+import './Post.scss';
+import { savedPosts } from '../../redux/action';
 
 const PostFooter = ({
   comment,
@@ -25,40 +25,42 @@ const PostFooter = ({
   setPostCommentInfo,
   postCommentInfo,
   id,
-  modalComments
+  modalComments,
+  savePostFlag
 }) => {
   const [showModal, setShowModal] = useState(false);
-  const [savePost, setSavePost] = useState(false);
   const allPosts = useSelector((state) => state.homePosts.allPosts);
-  // const dispatch = useDispatch();
-  // const selector = useSelector((state) => state.savedPosts.arr);
+  const [trigger, setTrigger] = useState(savePostFlag);
+  const dispatch = useDispatch();
 
   const handleShowModal = () => {
     setShowModal(!showModal);
   };
 
   const savedPostId = () => {
-    setSavePost(!savePost);
+    setTrigger(!trigger);
 
     const currentPostId = allPosts.find(({ id: idx }) => idx === id);
 
     currentPostId.savePostFlag = true;
 
     axios
-      .post(`/savedPosts/savedPost`, currentPostId)
-      .then((res) => console.log(res.data))
+      .patch('/posts/' + currentPostId._id, { savePostFlag: true })
+      .then((res) => dispatch(savedPosts(res.data)))
       .catch((error) => console.log('Error: ', error));
   };
-  // dispatch(savedPosts(res.data))
+
   const removePostId = () => {
+    setTrigger(!trigger);
+
     const currentPostId = allPosts.find(({ id: idx }) => idx === id);
 
-    axios
-      .delete(`/savedPosts/${currentPostId._id}`)
-      .then((res) => console.log(res.data))
-      .catch((error) => console.log('Error: ', error));
+    currentPostId.savePostFlag = false;
 
-    setSavePost(false);
+    axios
+      .patch('/posts/' + currentPostId._id, { savePostFlag: false })
+      .then((res) => console.log('patchDelete', res))
+      .catch((error) => console.log('Error: ', error));
   };
 
   return (
@@ -67,10 +69,10 @@ const PostFooter = ({
         <PostFooterIcons
           removePostId={removePostId}
           savedPostId={savedPostId}
-          savePost={savePost}
           like={like}
           comments={comments}
           id={id}
+          trigger={trigger}
         />
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         <span className="post__likes">{countOfLikes} отметок "Нравится"</span>

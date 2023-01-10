@@ -31,10 +31,11 @@ const createPost = async (req, res) => {
     photoDescription,
     dateOfPost,
     photoOfPost,
-    comment } = req.body
+    comment,
+    savePostFlag} = req.body
 
   try {
-    const posts = await Posts.create({nickName, subtitle, countOfLikes, photoDescription, dateOfPost, photoOfPost, comment})
+    const posts = await Posts.create({nickName, subtitle, countOfLikes, photoDescription, dateOfPost, photoOfPost, comment, savePostFlag})
     res.status(200).json(posts)
 
   } catch (error) {

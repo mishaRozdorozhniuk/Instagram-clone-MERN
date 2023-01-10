@@ -15,7 +15,8 @@ const Post = ({
   photoDescription,
   subtitle,
   photoOfPost,
-  id
+  id,
+  savePostFlag
 }) => {
   return (
     <article className="post">
@@ -48,6 +49,7 @@ const Post = ({
         countOfLikes={countOfLikes}
         modalComments={true}
         photoDescription={photoDescription}
+        savePostFlag={savePostFlag}
       />
     </article>
   );

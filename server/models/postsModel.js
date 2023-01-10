@@ -37,7 +37,11 @@ const postModel = new Schema({
         required: true
       }
     }
-  ]
+  ],
+  savePostFlag: {
+    type: Boolean,
+    required: false
+  }
 })
 
 module.exports = mongoose.model('Posts', postModel, 'posts')
