@@ -152,6 +152,11 @@ a.post__nick {
     grid-area: "post-icons";
 }
 
+.comments-icon-wrapper {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 @include respond-to(lg-small) {
     .post {
         &__comments {

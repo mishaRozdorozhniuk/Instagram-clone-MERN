@@ -73,6 +73,7 @@ const PostFooter = ({
           comments={comments}
           id={id}
           trigger={trigger}
+          showModal={handleShowModal}
         />
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         <span className="post__likes">{countOfLikes} отметок "Нравится"</span>
