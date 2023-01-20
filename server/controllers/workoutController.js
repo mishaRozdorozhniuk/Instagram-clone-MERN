@@ -1,5 +1,4 @@
 const Workout = require('../models/workoutModels')
-const Recommendation = require('../models/workoutModels')
 const mongoose = require('mongoose')
 
 // GET
