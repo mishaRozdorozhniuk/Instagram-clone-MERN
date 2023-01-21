@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Plus() {
+export default function Plus({ theme }) {
   return (
     <svg
       aria-label="Новая публикация"
       className="home"
-      color="#262626"
-      fill="#262626"
+      color={theme}
+      fill={theme}
       height="24"
       role="img"
       viewBox="1 2 22 20"

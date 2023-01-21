@@ -1,4 +1,10 @@
 @import '../../breakpoints.scss';
+@import '../../variables.scss';
+
+main {
+    background-color: var(--background);
+}
+
 .home-container {
     max-width: 821px;
     display: grid;
@@ -19,7 +25,7 @@
     border-radius: 8px;
     margin-top: 20px;
     border: 1px solid rgb(200, 200, 200);
-    background-color: #fff;
+    background-color: var(--backgroun);
 }
 
 .posts-block {

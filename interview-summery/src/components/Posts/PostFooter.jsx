@@ -32,6 +32,7 @@ const PostFooter = ({
   const allPosts = useSelector((state) => state.homePosts.allPosts);
   const [trigger, setTrigger] = useState(savePostFlag);
   const dispatch = useDispatch();
+  const theme = useSelector((state) => state.switchTheme.appTheme);
 
   const handleShowModal = () => {
     setShowModal(!showModal);
@@ -75,8 +76,10 @@ const PostFooter = ({
           trigger={trigger}
           showModal={handleShowModal}
         />
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <span className="post__likes">{countOfLikes} отметок "Нравится"</span>
+        <span data-theme={theme} className="post__likes">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          {countOfLikes} отметок "Нравится"
+        </span>
         <div className="likes-inner">
           <span>
             <a className="post__nick" href="#">

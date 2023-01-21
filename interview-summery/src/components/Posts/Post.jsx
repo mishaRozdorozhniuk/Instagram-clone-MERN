@@ -1,6 +1,7 @@
 import React from 'react';
 import StoriesUser from '../Stories/StoriesUser';
 import PostFooter from './PostFooter';
+import { useSelector } from 'react-redux';
 import './Post.scss';
 
 const Post = ({
@@ -18,8 +19,10 @@ const Post = ({
   id,
   savePostFlag
 }) => {
+  const theme = useSelector((state) => state.switchTheme.appTheme);
+
   return (
-    <article className="post">
+    <article data-theme={theme} className="post">
       <div className="post__header">
         <div className="post__inner">
           <StoriesUser size={true} />

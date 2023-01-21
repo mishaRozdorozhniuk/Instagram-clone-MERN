@@ -1,18 +1,18 @@
 import React from 'react';
 
-export default function Populars() {
+export default function Populars({ theme }) {
   return (
     <svg
       aria-label="Найти людей"
       className="find-people"
-      color="#262626"
-      fill="#262626"
+      color={theme}
+      fill={theme}
       height="24"
       role="img"
       viewBox="0 2 26 20"
       width="24">
       <polygon
-        fill="none"
+        fill={theme}
         points="13.941 13.953 7.581 16.424 10.06 10.056 16.42 7.585 13.941 13.953"
         stroke="currentColor"
         strokeLinecap="round"

@@ -1,6 +1,8 @@
 @import '../../breakpoints.scss';
+@import '../../variables.scss';
+
 .post {
-    background-color: #fff;
+    background-color: var(--background);
     border-radius: 8px;
     border: 1px solid rgb(200, 200, 200);
     margin-bottom: 12px;
@@ -9,6 +11,7 @@
         font-size: 18px;
         letter-spacing: 2px;
         cursor: pointer;
+        color: var(--text-primary)
     }
     &__nick-info {
         line-height: 0.7;
@@ -22,7 +25,7 @@
         grid-area: "post-header";
     }
     &__description {
-        color: rgb(142, 142, 142);
+        color: var(--text-secondary);
         font-size: 12px;
     }
     &__photo {
@@ -39,6 +42,7 @@
         font-weight: bold;
         display: flex;
         flex-direction: column;
+        color: var(--text-primary)
     }
     &__footer-icons {
         display: flex;
@@ -66,8 +70,11 @@
         padding-left: 10px;
         width: 100%;
         min-width: 250px;
+        background: transparent;
+
         &::placeholder {
             font-size: 14px;
+            color: var(--text-secondary);
         }
         &:focus-visible {
             outline: 0;
@@ -94,10 +101,10 @@
         display: block;
         border: none;
         color: rgb(168, 168, 168);
-        background-color: #fff;
         font-size: 15px;
         padding: 5px 0 10px 0;
         cursor: pointer;
+        background: transparent;
     }
     &-icons-inner>img {
         margin-right: 20px;
@@ -106,7 +113,7 @@
 
 a.post__nick {
     text-decoration: none;
-    color: #000;
+    color: var(--text-primary);
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 14px;
@@ -164,3 +171,4 @@ a.post__nick {
         }
     }
 }
+

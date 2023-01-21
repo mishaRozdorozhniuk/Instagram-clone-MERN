@@ -53,6 +53,7 @@ const PostList = () => {
         .patch('/posts/' + currentPostInput._id, currentPostInput)
         .then((res) => console.log(res, 'res'))
         .catch((error) => console.log('Error: ', error));
+
       if (response && response.data) {
         console.log(response);
       }

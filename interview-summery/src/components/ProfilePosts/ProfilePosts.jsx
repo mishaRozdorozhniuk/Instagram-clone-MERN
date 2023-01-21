@@ -65,6 +65,7 @@ const ProfilePosts = () => {
         .patch('/profilePosts/' + currentProfilePostById._id, currentProfilePostById)
         .then((res) => console.log(res, 'res'))
         .catch((error) => console.log('Error: ', error));
+
       if (response && response.data) {
         console.log(response);
       }

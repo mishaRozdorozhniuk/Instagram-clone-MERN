@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .rec {
     &-inner {
         display: flex;
@@ -12,10 +14,10 @@
         height: 56px;
         &-nick {
             text-decoration: none;
-            color: #000;
             font-weight: bold;
             font-size: 14px;
             padding-left: 15px;
+            color: var(--text-primary);
         }
     }
     &__avatar-info {
