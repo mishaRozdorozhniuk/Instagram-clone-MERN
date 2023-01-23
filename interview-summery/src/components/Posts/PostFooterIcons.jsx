@@ -1,24 +1,31 @@
 import React from 'react';
 import Share from '../../icons/Share';
 import SaveIcon from './SaveIcon';
+import Like from '../../icons/Like';
+import { useSelector } from 'react-redux';
+import Comments from '../../icons/Comments';
 
-const PostFooterIcons = ({ trigger, savedPostId, like, comments, removePostId, showModal }) => {
+const PostFooterIcons = ({ trigger, savedPostId, removePostId, showModal }) => {
+  const theme = useSelector((state) => state.switchTheme.appTheme);
+
+  const iconCondition = theme === 'dark' ? '#fff' : '#262626';
+
   return (
-    <div className="post__footer-icons">
+    <div data-theme={theme} className="post__footer-icons">
       <div className="post-icons-inner">
-        <img className="like-icon" src={like} alt="like" />
+        <Like theme={iconCondition} />
         <span onClick={showModal} className="comments-icon-wrapper">
-          <img className="comments-icon" src={comments} alt="comments" />
+          <Comments theme={iconCondition} />
         </span>
-        <Share />
+        <Share theme={iconCondition} />
       </div>
       {!trigger ? (
         <div onClick={() => savedPostId()}>
-          <SaveIcon remove={false} />
+          <SaveIcon theme={iconCondition} remove={false} />
         </div>
       ) : (
         <div onClick={() => removePostId()}>
-          <SaveIcon remove={true} />
+          <SaveIcon theme={iconCondition} remove={true} />
         </div>
       )}
     </div>

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Home from '../../icons/Home';
 import HeaderAvatar from './header-avatar.jpeg';
-import likeIcon from '../../icons/like.png';
 import Plus from '../../icons/Plus';
 import Populars from '../../icons/Populars';
 import Messenger from '../../icons/Messenger';
@@ -9,6 +8,7 @@ import { Link } from 'react-router-dom';
 import useTheme from '../../hooks/useLocalStorage';
 import { useDispatch } from 'react-redux';
 import { switchAppTheme } from '../../redux/action';
+import Like from '../../icons/Like';
 
 const HeaderList = () => {
   const { switchTheme, theme } = useTheme();
@@ -39,7 +39,7 @@ const HeaderList = () => {
         <Populars theme={iconCondition} />
       </li>
       <li className="header__item">
-        <img className="like-icon" src={likeIcon} alt="direct-message-icon" />
+        <Like theme={iconCondition} />
       </li>
       <li className="header__item">
         <Link to="/profile">

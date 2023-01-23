@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Share() {
+export default function Share({ theme }) {
   return (
     <svg
       aria-label="Поделиться публикацией"
       className="share"
-      color="#262626"
+      color={theme}
       fill="#262626"
       height="24"
       role="img"

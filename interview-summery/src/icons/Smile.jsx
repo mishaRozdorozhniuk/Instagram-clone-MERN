@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Smile = () => {
+const Smile = ({ theme }) => {
   return (
     <svg
       aria-label="Смайлик"
       className="smile-icon"
       color="#262626"
-      fill="#262626"
+      fill={theme}
       height="24"
       role="img"
       viewBox="0 0 24 24"

@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function SaveIcon({ remove }) {
+export default function SaveIcon({ remove, theme }) {
   return (
     <svg
       aria-label="Save"
       className="saveIcon"
-      color="#000"
+      color={theme}
       fill="#000"
       height="34"
       role="img"

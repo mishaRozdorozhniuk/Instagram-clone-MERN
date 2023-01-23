@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import like from '../../icons/like.png';
-import comments from '../../icons/comments.webp';
 import NickName from '../NickName/NickName';
 import Modal from '../Modal/Modal';
 import PostHeader from '../Posts/PostHeader';
@@ -70,8 +68,6 @@ const PostFooter = ({
         <PostFooterIcons
           removePostId={removePostId}
           savedPostId={savedPostId}
-          like={like}
-          comments={comments}
           id={id}
           trigger={trigger}
           showModal={handleShowModal}

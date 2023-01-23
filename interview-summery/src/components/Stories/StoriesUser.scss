@@ -32,3 +32,13 @@ figcaption {
     cursor: pointer;
     background-color: var(--background)
 }
+
+.like-icon-svg,
+.comments-icon-footer {
+    overflow: initial;
+    padding-left: 0;
+}
+
+.comments-icon-footer {
+    margin-left: 25px;
+}
