@@ -1,1 +1,1 @@
-# instagram-clone-with-server
+# instagram-clone using MERN stack
