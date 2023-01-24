@@ -6,10 +6,12 @@ $screen-lg-max: 1200px;
   --background: #fff;
   --text-primary: #000;
   --text-secondary: #8e8e8e;
+  --link-primary: rgb(0, 0, 102);
 }
 
 [data-theme="dark"] {
   --background: #000;
   --text-primary: #fff;
   --text-secondary: #fff;
+  --link-primary: #fff;
 }

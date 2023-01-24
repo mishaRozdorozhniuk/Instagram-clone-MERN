@@ -9,10 +9,12 @@ import ProfileSaved from '../../components/ProfilePosts/ProfileSaved';
 import ProfileTarget from '../../components/ProfilePosts/ProfileTarget';
 import Tabs from '../../components/Tab/Tabs';
 import Tab from '../../components/Tab/Tab';
+import { useSelector } from 'react-redux';
 import './Profile.scss';
 
 const Profile = () => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const theme = useSelector((state) => state.switchTheme.appTheme);
 
   const handleCurrentEditProfileTab = (selectedTab) => {
     switch (selectedTab) {
@@ -28,7 +30,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="prof">
+    <div data-theme={theme} className={theme === 'dark' ? 'prof__dark' : 'prof'}>
       <div className="container">
         <ProfileInfo />
         <div className="prof__stories">

@@ -4,7 +4,7 @@
 .post {
     background-color: var(--background);
     border-radius: 8px;
-    border: 1px solid rgb(200, 200, 200);
+    border: var(--text-primary);
     margin-bottom: 12px;
     &__dots {
         font-weight: bold;
@@ -71,7 +71,7 @@
         width: 100%;
         min-width: 250px;
         background: transparent;
-
+        color: var(--text-primary);
         &::placeholder {
             font-size: 14px;
             color: var(--text-secondary);

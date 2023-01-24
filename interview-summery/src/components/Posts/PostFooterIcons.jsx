@@ -8,7 +8,7 @@ import Comments from '../../icons/Comments';
 const PostFooterIcons = ({ trigger, savedPostId, removePostId, showModal }) => {
   const theme = useSelector((state) => state.switchTheme.appTheme);
 
-  const iconCondition = theme === 'dark' ? '#fff' : '#262626';
+  const iconCondition = theme === 'dark' ? '#fff' : '#000';
 
   return (
     <div data-theme={theme} className="post__footer-icons">

@@ -24,7 +24,7 @@ const HeaderList = () => {
     <ul className="header__list">
       <li className="header__item">
         <Link to="/">
-          <Home />
+          <Home theme={iconCondition} />
         </Link>
       </li>
       <li className="header__item">
@@ -47,8 +47,8 @@ const HeaderList = () => {
         </Link>
       </li>
       <li className="header__item" onClick={switchTheme}>
-        <span className="header__burger"></span>
-        <span className="header__burger"></span>
+        <span className={theme === 'dark' ? 'header__burger light' : 'header__burger'}></span>
+        <span className={theme === 'dark' ? 'header__burger light' : 'header__burger'}></span>
       </li>
     </ul>
   );

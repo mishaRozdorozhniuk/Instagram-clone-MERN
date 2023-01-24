@@ -7,8 +7,8 @@ import PostComments from './PostComments';
 import PostFooterIcons from './PostFooterIcons';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import './Post.scss';
 import { savedPosts } from '../../redux/action';
+import './Post.scss';
 
 const PostFooter = ({
   comment,

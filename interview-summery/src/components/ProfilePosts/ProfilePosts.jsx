@@ -4,12 +4,12 @@ import Modal from '../Modal/Modal';
 import PostHeader from '../Posts/PostHeader';
 import StoriesUser from '../Stories/StoriesUser';
 import NickName from '../NickName/NickName';
-import '../../pages/Profile/Profile.scss';
 import { AuthContext } from '../../contex';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentProfilePost } from '../../redux/action';
 import useFetch from '../../hooks/useFetch';
 import axios from 'axios';
+import '../../pages/Profile/Profile.scss';
 
 const ProfilePosts = () => {
   const [showModal, setShowModal] = useState(false);

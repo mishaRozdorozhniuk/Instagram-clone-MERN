@@ -8,13 +8,14 @@ import { useSelector } from 'react-redux';
 const ProfileInfo = () => {
   const { windowSize } = useScreenWidth();
   const settingsUserInfo = useSelector((state) => state.settings.settingsInfo);
+  const theme = useSelector((state) => state.switchTheme.appTheme);
 
   const handleUpdateUserProfileInfo = (updatedValue, initialValue) => {
     return settingsUserInfo !== undefined ? updatedValue : initialValue;
   };
 
   return (
-    <div className="prof__header">
+    <div data-theme={theme} className="prof__header">
       <div className="d">
         {windowSize <= 565 ? (
           <div className="avatar-small-scrin">
