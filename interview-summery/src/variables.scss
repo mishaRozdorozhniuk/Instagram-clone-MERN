@@ -15,3 +15,10 @@ $screen-lg-max: 1200px;
   --text-secondary: #fff;
   --link-primary: #fff;
 }
+
+[data-theme="light"] {
+  --background: #fff;
+  --text-primary: #000;
+  --text-secondary: #000;
+  --link-primary: #000;
+}

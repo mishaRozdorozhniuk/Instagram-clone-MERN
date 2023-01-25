@@ -1,4 +1,5 @@
 @import '../../mixins.scss';
+
 .current-stories-wrapper {
     @include flexCentering;
     flex-direction: column;

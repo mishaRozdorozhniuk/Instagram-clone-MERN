@@ -3,17 +3,18 @@
 
 .header {
     background-color: var(--background);
-    border-bottom: 1px solid rgb(216, 216, 216);
     position: sticky;
     top: 0;
     z-index: 10;
     &__dark {
         padding: 4px;
         background-color: #000;
+        border-bottom: 1px solid #8e8e8e;
     }
     &__light {
         padding: 15px;
         background-color: #fff;
+        border-bottom: 1px solid #d3d3d3;
     }
     &__burger::after {
         content: '';

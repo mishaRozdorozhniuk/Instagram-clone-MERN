@@ -15,7 +15,7 @@ export const ReactRouters = () => {
 
   return (
     <BrowserRouter>
-      <Header />
+      {user.isAuth ? <Header /> : null}
       {user.isAuth ? (
         <Routes>
           <Route exact="true" path="/" element={<App />} />

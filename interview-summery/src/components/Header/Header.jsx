@@ -4,6 +4,7 @@ import lightLogo from './Logo-Instagram.png';
 import SearchIcon from '../../icons/SearchIcon';
 import HeaderList from './HeaderList';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './Header.scss';
 
 const Header = () => {
@@ -15,7 +16,9 @@ const Header = () => {
   return (
     <header className={theme === 'dark' ? 'header header__dark ' : 'header header__light'}>
       <div className="header__inner">
-        <div>{<img className="header__logo" src={iconCondition} alt="header-logo" />}</div>
+        <Link to="/">
+          <div>{<img className="header__logo" src={iconCondition} alt="header-logo" />}</div>
+        </Link>
         <div className="header-section">
           <div className="header__search">
             {showSearchIcon ? <SearchIcon /> : null}

@@ -103,7 +103,7 @@ const ProfilePosts = () => {
         </Modal>
       )}
       {postsPata.map((post) => (
-        <div key={post.id} className="prof__post-item" onClick={() => handleShowModal(post.id)}>
+        <div key={post._id} className="prof__post-item" onClick={() => handleShowModal(post.id)}>
           <img className="prof__posts-photo" src={post.postPhoto} alt="post-foto1" />
           <LikesAndComment likes={post.likes} comments={post.comments} />
         </div>
