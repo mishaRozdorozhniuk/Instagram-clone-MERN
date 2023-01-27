@@ -4,9 +4,11 @@ import EditForm from '../../components/EditForm/EditForm';
 import Tab from '../../components/Tab/Tab';
 import Tabs from '../../components/Tab/Tabs';
 import './Settings.scss';
+import { useSelector } from 'react-redux';
 
 const EditProfile = () => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const theme = useSelector((state) => state.switchTheme.appTheme);
 
   const handleCurrentEditProfileTab = (selectedTab) => {
     switch (selectedTab) {
@@ -20,7 +22,7 @@ const EditProfile = () => {
   };
 
   return (
-    <section className="edit-prof container">
+    <section data-theme={theme} className="edit-prof container">
       <aside className="edit-prof__aside">
         <Tabs
           btnClass="tab-btn"

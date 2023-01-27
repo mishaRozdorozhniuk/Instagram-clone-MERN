@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .edit-prof {
-    background-color: #fff;
+    background-color: var(--background);
     border: 1px solid #ccc;
     border-radius: 5px;
     display: flex;

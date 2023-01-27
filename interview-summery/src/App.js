@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 function App() {
   const theme = useSelector((state) => state.switchTheme.appTheme);
+
   document.querySelector('.body').setAttribute('data-theme', theme);
 
   return (

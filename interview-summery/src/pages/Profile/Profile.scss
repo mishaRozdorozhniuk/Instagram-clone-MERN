@@ -8,12 +8,13 @@
     padding: 0 15px;
 }
 .prof__dark {
-    background-color: #000;
+    background-color: rgb(18, 18, 18);
     padding-top: 40px;
     overflow: hidden;
 }
 .prof {
     padding-top: 40px;
+    padding-bottom: 30px;
     background-color: #fff;
     &__header {
         display: flex;

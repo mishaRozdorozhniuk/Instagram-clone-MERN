@@ -12,6 +12,11 @@ const Header = () => {
   const theme = useSelector((state) => state.switchTheme.appTheme);
 
   const iconCondition = theme === 'dark' ? lightLogo : logo;
+  const root = document.getElementById('root');
+
+  theme === 'dark'
+    ? root.setAttribute('class', 'root-dark')
+    : root.setAttribute('class', 'root-light');
 
   return (
     <header className={theme === 'dark' ? 'header header__dark ' : 'header header__light'}>

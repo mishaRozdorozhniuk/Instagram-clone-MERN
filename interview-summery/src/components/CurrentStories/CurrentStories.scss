@@ -1,4 +1,5 @@
 @import '../../mixins.scss';
+@import '../../variables.scss';
 
 .current-stories-wrapper {
     @include flexCentering;
@@ -21,12 +22,13 @@
 
 .current-stories-text {
     font-weight: bold;
+    color: var(--text-primary);
 }
 
 .current-stories {
     border: double 3px transparent;
     border-radius: 50%;
-    background-image: linear-gradient(rgb(227, 27, 201), rgb(239, 174, 10)), /*here must be*/
+    background-image: linear-gradient(rgb(227, 27, 201), rgb(239, 174, 10)),
     linear-gradient(to right, rgb(255, 162, 49), rgb(189, 40, 200));
     background-origin: border-box;
     background-clip: content-box, border-box;
@@ -41,7 +43,7 @@
 }
 
 .current-stories.active {
-    background-image: linear-gradient(rgba(208, 208, 208, 0.816), rgba(208, 208, 208, 0.816)), /*here must be*/
+    background-image: linear-gradient(rgba(208, 208, 208, 0.816), rgba(208, 208, 208, 0.816)),
     linear-gradient(to right, rgba(208, 208, 208, 0.816), rgba(208, 208, 208, 0.816));
 }
 

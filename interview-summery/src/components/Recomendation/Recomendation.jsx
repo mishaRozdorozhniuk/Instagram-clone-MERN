@@ -3,12 +3,13 @@ import avatar from './header-avatar.jpeg';
 import RecommendationUser from './RecommendationUser';
 import './Recomendation.scss';
 import useFetch from '../../hooks/useFetch';
+import { useSelector } from 'react-redux';
 
 const Recomendation = () => {
   const { data } = useFetch('/rec/recommendations');
-
+  const theme = useSelector((state) => state.switchTheme.appTheme);
   return (
-    <section className="rec">
+    <section data-theme={theme} className="rec">
       <div className="rec-inner">
         <div className="rec__avatar-info">
           <div className="rec__current">
@@ -22,7 +23,6 @@ const Recomendation = () => {
         </div>
         <button className="rec__swich">Переключиться</button>
       </div>
-
       <div className="rec__all">
         <span className="rec__for-me">Рекомендации для вас</span>
         <span className="rec__all-link">

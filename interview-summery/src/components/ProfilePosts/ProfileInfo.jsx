@@ -4,6 +4,7 @@ import masterpiece from '../../components/Header/header-avatar.jpeg';
 import ProfileFollowers from './ProfileFollowers';
 import useScreenWidth from '../../hooks/useScreenWidth';
 import { useSelector } from 'react-redux';
+import Settings from '../../icons/Settings';
 
 const ProfileInfo = () => {
   const { windowSize } = useScreenWidth();
@@ -42,7 +43,7 @@ const ProfileInfo = () => {
           <Link to="/settings">
             <button className="prof__header-edit">Edit Profile</button>
           </Link>
-          <div className="prof__header-settings">settings</div>
+          <Settings />
         </div>
         <ProfileFollowers />
         <div className="prof__subtitle">
