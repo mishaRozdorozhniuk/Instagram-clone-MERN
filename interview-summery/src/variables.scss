@@ -14,6 +14,8 @@ $screen-lg-max: 1200px;
   --text-primary: #fff;
   --text-secondary: #fff;
   --link-primary: #fff;
+  --menu: rgb(38, 38, 38);
+  --menu-secondary: rgb(18, 18, 18);
 }
 
 [data-theme="light"] {
@@ -21,4 +23,6 @@ $screen-lg-max: 1200px;
   --text-primary: #000000;
   --text-secondary: #000;
   --link-primary: #000;
+  --menu: #fff;
+  --menu-secondary: #f6f6f6;
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Settings() {
+export default function Settings({ theme }) {
   return (
     <svg
       aria-label="Параметры"
       className="settings-icon"
-      color="#fafafa"
-      fill="#fafafa"
+      color={theme}
+      fill={theme}
       role="img"
       viewBox="0 0 24 24">
       <circle
